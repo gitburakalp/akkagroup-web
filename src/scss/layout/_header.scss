@@ -1,51 +1,94 @@
 .header {
-    background-color: $color-white;
+  @include media-breakpoint-down(sm) {
+    &:not(.active) {
+      display: none;
+      opacity: 0;
+      visibility: hidden;
+      z-index: -1;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    position: absolute;
+    width: 100%;
+    max-width: calcPercent(1596, 1920) + vw;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 21;
+    padding-top: calcPercent(36, 1080) + vh;
+    padding-bottom: calcPercent(36, 1080) + vh;
+  }
+
+  &__nav {
+    @include media-breakpoint-up(md) {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+  }
+
+  &__logo {
+    &-link {
+      display: inline-block;
+    }
+
+    &-info {
+      position: relative;
+      font-family: $FontFamilySerif;
+      font-size: 16px;
+      color: $color-black;
+    }
+  }
+
+  &__menu {
+    position: relative;
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+
     @include media-breakpoint-down(sm) {
-        position: fixed;
-        left: 0;
-        right: 0;
-        z-index: 21;
-        bottom: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $color-white;
+      z-index: 22;
+      flex-direction: column;
+      padding-left: 0;
+      justify-content: space-around;
+      align-items: center;
+      padding-top: calcPercent(104, 667) + vh;
+      padding-bottom: calcPercent(308, 667) + vh;
     }
 
-    &__menu {
-        display: flex;
-        flex-direction: row;
-        list-style: none;
-        margin-bottom: 0;
-        padding: 8px;
+    &-item {
+      position: relative;
 
-        >* {
-            flex-basis: 0;
-            flex-grow: 1;
-            max-width: 100%;
+      + * {
+        @include media-breakpoint-down(sm) {
+          margin-top: calcPercent(43, 1920) + vw;
         }
 
-        &-item {
-            position: relative;
-            text-align: center; 
-
-            + * {
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    width: 1px;
-                    background-color: $color-black;
-                }
-            } 
+        @include media-breakpoint-up(md) {
+          margin-left: calcPercent(32, 1920) + vw;
         }
-
-        &-link {
-            display: inline-block;
-            font-family: $FontFamilySerif;
-            font-size: 12px;
-            letter-spacing: -0.26px;
-            line-height: 1.5;
-            text-decoration: none;
-        }
+      }
     }
+
+    &-link {
+      position: relative;
+      display: inline-block;
+      font-family: $FontFamilySerif;
+      font-size: fluidSize(20, 26, 768, 1920);
+      text-transform: uppercase;
+      line-height: 1.56;
+      letter-spacing: -0.015vw;
+      color: $color-black;
+
+      @include media-breakpoint-up(md) {
+        font-size: fluidSize(14, 16, 768, 1920);
+      }
+    }
+  }
 }

@@ -1,36 +1,88 @@
 .components-section {
-    &__title {
-        font-family: $FontFamilySerif;
-        font-size: 20px;
-        color: $color-black;
-        line-height: 1.5;
-        text-align: center;
+  &__title {
+    font-family: $FontFamilySerif;
+    font-size: 20px;
+    color: $color-black;
+    line-height: 1.5;
+    text-align: center;
 
-        &--xl {
-            font-size: 34px;
-        }
-
-        &--red {
-            @extend .components-section__title;
-            color: $color-cherry;
-        }
-
-        + * {
-            margin-top: calcPercent(33,667) + vh;
-        }
-
-        @include media-breakpoint-up(md) {
-            text-align: left
-        }
+    &--xl {
+      font-size: 34px;
     }
 
-    &__description {
-        font-family: $FontFamilySansSerif;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 1.43;
-        letter-spacing: -0.3px;
-        color: $color-steel;
-        text-align: center
-    } 
+    &--red {
+      @extend .components-section__title;
+      color: $color-cherry;
+    }
+
+    + * {
+      margin-top: calcPercent(33, 667) + vh;
+    }
+
+    @include media-breakpoint-up(md) {
+      text-align: left;
+    }
+  }
+
+  &__description {
+    font-family: $FontFamilySansSerif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.43;
+    letter-spacing: -0.3px;
+    color: $color-steel;
+    text-align: center;
+  }
+}
+
+.title {
+  font-family: $FontFamilySerif;
+  font-size: 34px;
+  color: $color-cherry;
+  line-height: 1;
+  letter-spacing: -0.3px;
+  text-transform: uppercase;
+  text-align: center;
+
+  + * {
+      margin-top: calcPercent(33,667) + vh;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: fluidSize(34, 50, 768, 1920);
+    letter-spacing: fluidSize(-0.3, -1.7, 768, 1920);
+  }
+
+  &--sub {
+    font-family: $FontFamilySerif;
+    font-size: 20px;
+    color: $color-black;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    text-align: center;
+
+    + * {
+        margin-top: calcPercent(33,667) + vh;
+    }
+
+    @include media-breakpoint-up(md) {
+      font-size: fluidSize(20, 30, 768, 1920);
+      line-height: 1.33;
+      letter-spacing: fluidSize(0.5, 0.75, 768, 1920);
+      text-align: left;
+    }
+  }
+}
+
+.description {
+  font-family: $FontFamilySansSerif;
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: -0.3px;
+  text-align: center;
+  color: $color-steel;
+
+  @include media-breakpoint-up(md) {
+    text-align: left;
+  }
 }

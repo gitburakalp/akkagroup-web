@@ -1,30 +1,62 @@
 .main {
-    &-headings {
-        position: absolute;
-        z-index: 20;
-        width: 100%;
-        text-align: center;
+  &-headings {
+    position: absolute;
+    z-index: 20;
 
-        top: calcPercent(81,667) + vh
+    top: calcPercent(81, 667) + vh;
+
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+      width: 100%;
     }
 
-    &-title {
-        font-family: $FontFamilySerif;
-        font-size: 48px;
-        color: $color-white;
-        text-shadow:1px 1px 1px rgba(0,0,0,0.5);
-        letter-spacing: -0.83px;
-        
-        &--sub {
-            font-family: $FontFamilySerif;
-            font-size: 29px;
-            letter-spacing: -0.73px;
-        }
+    @include media-breakpoint-up(md) {
+      top: calcPercent(641, 1080) + vh;
+      right: calcPercent(260, 1920) + vw;
+    }
+  }
+
+  &-title {
+    font-family: $FontFamilySerif;
+    font-size: 48px;
+    color: $color-white;
+    letter-spacing: -0.83px;
+    line-height: 1;
+
+    @include media-breakpoint-down(sm) {
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     }
 
-    > section + section {
-        @include media-breakpoint-down(sm) {
-            margin-top: calcPercent(33,667) + vh;
-        }
+    @include media-breakpoint-up(md) {
+      font-size: fluidSize(75, 140, 768, 1920);
+      letter-spacing: -0.05vw;
     }
+
+    &--sub {
+      font-family: $FontFamilySerif;
+      font-size: 29px;
+      letter-spacing: -0.73px;
+      line-height: 1;
+
+      @include media-breakpoint-up(md) {
+        font-size: fluidSize(45, 80, 768, 1920);
+        letter-spacing: -0.05vw;
+      }
+    }
+  }
+
+  > section {
+
+    &:last-child {
+      padding-bottom: calcPercent(296,1080) + vh;
+    }
+
+    + section {
+      margin-top: 33px;
+
+      @include media-breakpoint-up(md) {
+        margin-top: calcPercent(18, 1080) + vh;
+      }
+    }
+  }
 }
