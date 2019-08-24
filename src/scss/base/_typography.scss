@@ -1,0 +1,36 @@
+.components-section {
+    &__title {
+        font-family: $FontFamilySerif;
+        font-size: 20px;
+        color: $color-black;
+        line-height: 1.5;
+        text-align: center;
+
+        &--xl {
+            font-size: 34px;
+        }
+
+        &--red {
+            @extend .components-section__title;
+            color: $color-cherry;
+        }
+
+        + * {
+            margin-top: calcPercent(33,667) + vh;
+        }
+
+        @include media-breakpoint-up(md) {
+            text-align: left
+        }
+    }
+
+    &__description {
+        font-family: $FontFamilySansSerif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.43;
+        letter-spacing: -0.3px;
+        color: $color-steel;
+        text-align: center
+    } 
+}

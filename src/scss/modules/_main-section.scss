@@ -1,0 +1,44 @@
+.main {
+  &__section {
+    .figure {
+      &__item {
+        max-height: $viewportHeight;
+
+        &-fill {
+          padding-bottom: 667 / 375 * 100%;
+
+          @include media-breakpoint-up(md) {
+          }
+        }
+      }
+    }
+
+    .btn--more {
+      position: absolute;
+      font-family: $FontFamilyFuturaPT;
+      font-size: 15px;
+      line-height: 1.33;
+      letter-spacing: 3.9px;
+      color: $color-black;
+      z-index: 20;
+      right: calcPercent(20,375)+vw;
+      bottom: calcPercent(72,667)+vh;
+
+      width: 146px;
+      height: 146px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &::after {
+        content: "\f178";
+        font-family: "Font Awesome 5 Pro";
+        font-weight: 300;
+        color: $color-white;
+        font-size: 26px
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.header {
+    background-color: $color-white;
+    @include media-breakpoint-down(sm) {
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: 21;
+        bottom: 0;
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        margin-bottom: 0;
+        padding: 8px;
+
+        >* {
+            flex-basis: 0;
+            flex-grow: 1;
+            max-width: 100%;
+        }
+
+        &-item {
+            position: relative;
+            text-align: center; 
+
+            + * {
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 1px;
+                    background-color: $color-black;
+                }
+            } 
+        }
+
+        &-link {
+            display: inline-block;
+            font-family: $FontFamilySerif;
+            font-size: 12px;
+            letter-spacing: -0.26px;
+            line-height: 1.5;
+            text-decoration: none;
+        }
+    }
+}
