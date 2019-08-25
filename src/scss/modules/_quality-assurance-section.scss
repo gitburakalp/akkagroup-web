@@ -1,0 +1,37 @@
+.quality-assurance-section {
+  position: relative;
+
+  &__details {
+    @include media-breakpoint-down(sm) {
+      .title {
+        position: absolute;
+        top: calcPercent(137, 667) + vh;
+        right: 0;
+        background-color: $color-white;
+        width: calcPercent(328, 375) + vw;
+        box-shadow: 0 0 1px $color-black;
+        padding: 18px 25px;
+
+        &-section {
+          position: relative;
+          height: calcPercent(717, 667) + vh;
+          background-image: url("../../images/statics/mall.png");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 135%;
+        }
+      }
+
+      .description {
+          padding-left: 34px;
+          padding-right: 34px;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      width: 385px;
+      margin-left: auto;
+      padding-top: calcPercent(168,1080) + vh
+    }
+  }
+}

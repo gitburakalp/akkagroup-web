@@ -1,17 +1,26 @@
 .header {
+  position: fixed;
+  background-color: $color-white;
+  z-index: 23;
+
   @include media-breakpoint-down(sm) {
-    position: fixed;
     width: 100%;
     left: 0;
     bottom: 0;
   }
 
+  @include media-breakpoint-up(md) {
+    position: absolute;
+    width: 100%;
+    background-color: transparent
+  }
+
   &.is-shown {
-    .hamburger {
-      @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(sm) {
+      .hamburger {
         position: fixed;
         top: 15px;
-        z-index: 22;
+        z-index: 23;
 
         div {
           &:first-child {
@@ -31,22 +40,20 @@
           }
         }
       }
-    }
 
-    .header {
-      &-logo {
-        position: absolute;
-        right: 15px;
-        bottom: 10vh;
-        transition-delay: 500ms;
+      .header {
+        &-logo {
+          position: absolute;
+          right: 15px;
+          bottom: 10vh;
+          z-index: 22;
 
-        img {
-          width: 75%;
+          img {
+            width: 75%;
+          }
         }
-      }
 
-      &-menu {
-        @include media-breakpoint-down(sm) {
+        &-menu {
           position: fixed;
           top: 0;
           left: 0;
@@ -72,13 +79,15 @@
   }
 
   &:not(.is-shown) {
-    .header {
-      &-menu {
-        opacity: 0;
-        visibility: hidden;
-        z-index: -1;
-        max-height: 0px;
-        max-width: 0px;
+    @include media-breakpoint-down(sm) {
+      .header {
+        &-menu {
+          opacity: 0;
+          visibility: hidden;
+          z-index: -1;
+          max-height: 0px;
+          max-width: 0px;
+        }
       }
     }
   }
@@ -89,22 +98,37 @@
     align-items: center;
     height: 100%;
     padding: 25px 30px;
+
+    @include media-breakpoint-up(md) {
+      max-width: calcPercent(1640,1920) + vw;
+      margin-left: auto;
+      margin-right: auto;
+      $pa:calcPercent(36,1080) + vh;
+      padding-top: $pa;
+      padding-bottom: $pa;
+    }
   }
 
   &-logo {
     display: inline-block;
-    z-index: 20;
     transition: all $duration ease;
+    max-width: 90px;
 
     img {
-      width: 50%;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+
+    @include media-breakpoint-up(md) {
+      max-width: fluidSize(90,160,768,1920);
     }
   }
 
   .hamburger {
     @include media-breakpoint-down(sm) {
       position: absolute;
-      right: 15px;
+      right: 30px;
       width: 25px;
       border-color: $color-black;
 
@@ -118,6 +142,7 @@
   }
 
   &-menu {
+    position: relative;
     list-style: none;
     padding-left: 0;
 
@@ -126,15 +151,25 @@
 
     transition: opacity $duration ease;
     transition-delay: 200ms;
+    z-index: 21;
+
+    @include media-breakpoint-down(sm ){
+      background-color: $color-white
+    }
 
     @include media-breakpoint-up(md) {
       flex-direction: row;
+      margin-left: auto;
     }
 
     &__item {
       position: relative;
       color: $color-black;
       text-align: center;
+
+      + * {
+        margin-left: calcPercent(32,1920) + vw;
+      }
     }
 
     &__link {
@@ -143,6 +178,11 @@
       line-height: 1.58;
       letter-spacing: -0.56px;
       text-transform: uppercase;
+
+      @include media-breakpoint-up(md) {
+        font-size: fluidSize(14,16,768,1920);
+        letter-spacing: -0.017vw
+      }
     }
   }
 }

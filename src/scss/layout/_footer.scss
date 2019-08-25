@@ -1,99 +1,163 @@
 .footer {
+  position: relative;
   background-color: $color-dark;
   color: $color-white;
   padding-top: 45px;
   padding-bottom: 135px;
 
-  .row.exc [class*="col"] {
+  .order--1 {
     @include media-breakpoint-down(sm) {
-      margin-top: 39px;
-      text-align: center;
+      order: -1;
+      margin-bottom: 22px;
     }
+  }
 
+  .input-section {
     @include media-breakpoint-up(md) {
-      max-width: calcPercent(260,1920) + vw;
+      width: calcPercent(398, 1920) + vw;
     }
   }
 
   @include media-breakpoint-up(md) {
     padding-top: calcPercent(153, 1080) + vh;
-    padding-bottom: calcPercent(66, 1080) + vh;
+    padding-bottom: calcPercent(66.5, 1080) + vh;
+  }
+
+  @include media-breakpoint-up(md) {
+    background-image: url("../../images/svg/footer-bg.svg");
+    background-position: calcPercent(190, 1920) + vw calcPercent(115, 1080) + vh;
+    background-repeat: no-repeat;
+  }
+
+  &-container {
+    padding-left: 40px;
+    padding-right: 40px;
+
+    @include media-breakpoint-up(md) {
+      padding-left: calcPercent(108, 1920) + vw;
+      padding-right: calcPercent(140, 1920) + vw;
+    }
   }
 
   &-title {
     font-family: $FontFamilySerif;
-    font-size: 16px;
-    line-height: 2.83;
-    letter-spacing: -0.39px;
+    font-size: 34px;
+    line-height: 1.5;
+    letter-spacing: -0.73px;
+    color: inherit;
 
-    @include media-breakpoint-up(md) {
-      font-size: fluidSize(16, 18, 768, 1920);
+    + * {
+      &.row {
+        > * {
+          + * {
+            @include media-breakpoint-down(sm) {
+              margin-top: 39px;
+            }
+          }
+        }
+      }
     }
 
-    &--xl {
-      @extend .footer-title;
-      font-size: 34px;
-
-      @include media-breakpoint-up(md) {
-        font-size: fluidSize(34, 50, 768, 1920);
-      }
+    @include media-breakpoint-down(sm) {
+      text-align: center;
     }
   }
 
-  &-address {
+  &-subtitle {
+    font-family: $FontFamilySerif;
+    font-size: 18px;
+    line-height: 2.83;
+    letter-spacing: -0.39px;
+    color: inherit;
+
+    @include media-breakpoint-up(md) {
+      font-size: fluidSize(14, 18, 768, 1920);
+      letter-spacing: -0.016vw;
+    }
+  }
+
+  &-description {
     font-family: $FontFamilySansSerif;
     font-size: 14px;
+    text-align: center;
     line-height: 1.43;
     letter-spacing: -0.3px;
     color: $color-steel;
+
+    @include media-breakpoint-up(md) {
+      font-size: fluidSize(10, 14, 768, 1920);
+      letter-spacing: -0.016vw;
+      text-align: left
+    }
+  }
+
+  [class*="form-control"] {
+    + * {
+      margin-top: 22px;
+    }
   }
 
   &-menu {
     display: flex;
-    flex-direction: row;
-    list-style: none;
-    padding-left: 0;
-
     flex-wrap: wrap;
+    justify-content: center;
 
     @include media-breakpoint-down(sm) {
-      max-width: calcPercent(203, 375) + vw;
-      margin: 0 auto;
+      margin-top: 56px;
+      margin-bottom: 40px;
     }
 
     &__item {
       position: relative;
+      color: $color-white;
+      padding: 0 1rem;
 
-      + * {
-        @include media-breakpoint-down(sm) {
-          &:nth-child(3) {
-            &::after {
-              background-color: transparent;
-            }
+      @include media-breakpoint-down(sm) {
+        &:nth-child(3) {
+          &::before {
+            background-color: transparent;
           }
         }
 
-        margin-left: 1rem;
-        padding-left: 1rem;
+        &:not(:nth-child(-n + 2)) {
+          margin-top: 1rem;
+        }
+      }
 
-        &::after {
+      + * {
+        &::before {
           content: "";
           position: absolute;
-          top: 0;
           left: 0;
+          top: 0;
           width: 1px;
           height: 100%;
           background-color: $color-white;
         }
       }
     }
+  }
 
-    &__link {
-      font-family: $FontFamilySansSerif;
-      font-size: 14px;
-      line-height: 1.79;
-      letter-spacing: -0.3px;
-      color: inherit;
+  .akka-group-section {
+    @include media-breakpoint-up(md) {
+      margin-top: calcPercent(46, 1080) + vh;
+    }
+  }
+
+  &-copyright {
+    font-family: $FontFamilySansSerif;
+    font-size: 14px;
+    line-height: 2;
+    letter-spacing: -0.3px;
+    text-align: center;
+
+    @include media-breakpoint-down(sm) {
+      margin-top: 40px;
+    }
+
+    @include media-breakpoint-up(md) {
+      font-size: fluidSize(10, 14, 768, 1920);
+      letter-spacing: -0.016vw;
     }
   }
 }

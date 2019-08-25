@@ -1,0 +1,21 @@
+.fh-section {
+
+    > div + div {
+        margin-top: 70px;
+
+        @include media-breakpoint-up(md) {
+            margin-top: calcPercent(322,1080) + vh
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        max-width: calcPercent(1640,1920) + vw;
+        margin-left: auto;
+        margin-right: auto;
+
+        background-image: url("../../images/statics/fullheight-bg.png");
+        background-position:top left;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+}

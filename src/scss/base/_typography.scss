@@ -1,0 +1,60 @@
+.title {
+    font-family: $FontFamilySerif;
+    font-size: 34px;
+    line-height: 1.03;
+    letter-spacing: -0.73px;
+    color: $color-cherry;
+    text-align: center;
+
+    + * {
+        margin-top: 33px;
+
+        @include media-breakpoint-up(md) {
+            margin-top: calcPercent(34,1080) + vh;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        font-size: fluidSize(20,50,768,1920);
+        letter-spacing: -0.056vw;
+    }
+
+    &-section {
+        + * {
+            margin-top: 33px;
+    
+            @include media-breakpoint-up(md) {
+                margin-top: calcPercent(34,1080) + vh;
+            }
+        }
+    }
+}
+
+.subtitle {
+    font-family: $FontFamilySerif;
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    color: $color-black;
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+        font-size: fluidSize(14,30,768,1920);
+        letter-spacing: 0.039vw;
+        text-align: left
+    }
+}
+
+.description {
+    font-family: $FontFamilySansSerif;
+    font-size: 14px;
+    line-height: 1.43;
+    letter-spacing: -0.016vw;
+    color: $color-steel;
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+        text-align: left;
+        font-size: fluidSize(12,14,768,1920);
+    }
+}

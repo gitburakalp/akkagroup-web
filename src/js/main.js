@@ -1,3 +1,4 @@
 $(".hamburger").on("click", function() {
-    $(this).closest('.header').toggleClass('is-shown')
+    $('html,body').toggleClass('overflow-hidden');
+    $(this).closest('.header').toggleClass('is-shown');
 });

@@ -1,0 +1,42 @@
+.about-section {
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-down(sm) {
+        max-width: calcPercent(330,375) + vw;
+        margin-left:auto;
+        margin-right: auto;
+    }
+
+    @include media-breakpoint-up(md) {
+        flex-direction: row;
+        align-items: center;
+        height: calcPercent(987,1080) + vh;    
+    }
+
+    &__details {
+        @include media-breakpoint-up(md) {
+            max-width: calcPercent(820,1920) + vw;
+            margin-left: auto;
+            margin-right: calcPercent(140,1920) + vw
+        }
+    }
+
+    &__imgBlock {
+        @include media-breakpoint-up(md) {
+            width: 71vw;
+            position: absolute;
+            z-index: -1;
+            margin-left: -15%;
+
+            .figure {
+                &__item{
+                    max-height: calcPercent(987,1080) + vh;
+                    &-fill {
+                        padding-bottom: 987 / 1090 * 100%
+                    }
+                }
+            }
+        }
+    } 
+}

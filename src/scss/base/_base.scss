@@ -3,7 +3,18 @@ html {
 }
 
 body {
-    background-color: $color-pale-grey
+}
+
+main {
+    > section {
+        + * {
+            margin-top: 33px;
+
+            @include media-breakpoint-up(md) {
+                margin-top: calcPercent(17.7,1080) + vh;
+            }
+        }
+    }
 }
 
 html,body{
@@ -17,9 +28,14 @@ html,body{
     }
 }
 
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
 a {
     display: inline-block;
-    color: inherit;
+    color: inherit !important;
     transition: color $duration ease;
 
     &:hover {
@@ -28,6 +44,24 @@ a {
     }
 }
 
-h1,h2,h3,h4,h5,h6,ul,figure {
+h1,h2,h3,h4,h5,h6,ul,figure,p {
     margin-bottom: 0;
+}
+
+.form-control {
+    &--transparent {
+        @extend .form-control;
+        background-color: transparent;
+        border-radius: 0;
+        color: $color-steel;
+        font-size: 20px;
+
+        @include media-breakpoint-up(md) {
+            font-size: fluidSize(12,14,768,1280)
+        }
+
+        @include media-breakpoint-up(xl) {
+            font-size: fluidSize(16,20,1280,1920)
+        }
+    }
 }

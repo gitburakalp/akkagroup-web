@@ -1,48 +1,25 @@
 .btn {
     &--more {
-        position: absolute;
-        font-family: $FontFamilyFuturaPT;
-        font-size: 15px;
-        line-height: 1.33;
-        letter-spacing: 3.9px;
-        color: $color-black;
-        z-index: 20;
-        right: calcPercent(20, 375) + vw;
-        bottom: calcPercent(100, 667) + vh;
-    
-        width: 146px;
-        height: 146px;
-    
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid $color-white;
-        border-radius: 100%;
-    
-        @include media-breakpoint-up(md) {
-          top: calcPercent(480,1080) + vh;
-          $amount: fluidSize(146, 243, 768, 1920);
-          width: $amount;
-          height: $amount;
-          text-align: left;
-          color: $color-white;
-          font-size: fluidSize(14,16,768,1920);
-          line-height: 1.3;
-          letter-spacing: 0.2vw;
-        }
-    
-        &::after {
-          content: "\f178";
-          font-family: "Font Awesome 5 Pro";
-          font-weight: 300;
-          color: $color-white;
-          font-size: 26px;
-    
-          @include media-breakpoint-up(md) {
-            $amount: fluidSize(26, 39, 768, 1920);
-            font-size: $amount
-          }
-        }
+      position: absolute;
+      border-radius: 100%;
+      border:1px solid;
+      border-color: inherit;
+      font-family: $FontFamilyFuturaPT;
+      font-size: inherit;
+      line-height: inherit;
+      letter-spacing: inherit;
+      padding: 26px 39px;
+
+      @include media-breakpoint-up(md) {
+        padding: 4.486vw 5.58vw
+      }
+
+      &::after {
+        content: "\f178";
+        display: block;
+        font-family: "Font Awesome 5 Pro";
+        font-weight: 300;
+        color: inherit;
+      }
     }
   }

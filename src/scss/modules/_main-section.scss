@@ -1,0 +1,136 @@
+.main {
+  &-section {
+    position: relative;
+
+    .figure {
+      &__item {
+        max-height: $viewportHeight;
+        &-fill {
+          padding-bottom: 451 / 375 * 100%;
+          @include media-breakpoint-up(md) {
+            padding-bottom: 1080 / 1920 * 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &-infoBlock {
+    position: absolute;
+    text-align: center;
+
+    top: calcPercent(81, 667) + vh;
+    z-index: 20;
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+
+    @include media-breakpoint-up(md) {
+      top: calcPercent(641, 1080) + vh;
+      right: calcPercent(240, 1920) + vw;
+      text-align: left;
+    }
+
+    .btn--more {
+      font-size: 15px;
+      line-height: 1.33;
+      letter-spacing: 3.9px;
+      color: $color-black;
+      border-color: $color-white;
+
+      @include media-breakpoint-down(sm) {
+        transform: translateY(35%)
+      }
+
+      &::after {
+        font-size: fluidSize(26, 39, 320, 1920);
+      }
+
+      @include media-breakpoint-up(md) {
+        color: $color-white;
+        font-size: fluidSize(14, 16, 768, 1920);
+        letter-spacing: 0.217vw;
+        transform: translate(40%,-138%);
+        right: 0;
+      }
+    }
+  }
+
+  &-title {
+    font-family: $FontFamilySerif;
+    font-size: 48px;
+    letter-spacing: -1.03px;
+    color: $color-pale-grey;
+
+    @include media-breakpoint-up(md) {
+      font-size: fluidSize(48, 140, 768, 1920);
+      line-height: 0.83;
+      letter-spacing: -0.156vw;
+    }
+  }
+
+  &-subtitle {
+    font-family: $FontFamilySerif;
+    font-size: 29px;
+    line-height: 1.21;
+    letter-spacing: -0.73px;
+    color: $color-black;
+
+    @include media-breakpoint-up(md) {
+      font-size: fluidSize(29, 80, 768, 1920);
+      letter-spacing: -0.104vw;
+    }
+  }
+
+  &-menu {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    background-color: $color-white;
+    width: 100%;
+    bottom: 0;
+    padding: 8px;
+
+    @include media-breakpoint-up(md) {
+      border-radius: 5px;
+      width: fluidSize(375, 679, 768, 1920);
+      bottom: calcPercent(47, 1080) + vh;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px;
+    }
+
+    &__item {
+      position: relative;
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 100%;
+      text-align: center;
+      color: $color-black;
+
+      + * {
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 1px;
+          background-color: $color-black;
+        }
+      }
+    }
+
+    &__link {
+      font-family: $FontFamilySerif;
+      font-size: 14px;
+      line-height: 1;
+
+      @include media-breakpoint-up(md) {
+        font-size: 22px;
+        letter-spacing: -0.024vw;
+      }
+    }
+  }
+}
