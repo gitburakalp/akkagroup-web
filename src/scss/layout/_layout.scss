@@ -3,8 +3,6 @@ a {
 }
 
 .container {
-  max-width: calcPercent(341, 375) + vw;
-
   @include media-breakpoint-up(md) {
     max-width: calcPercent(1640, 1920) + vw;
   }
