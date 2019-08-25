@@ -1,0 +1,103 @@
+.fw-section {
+  position: fixed;
+  background-color: $color-dark;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-top: 0;
+  z-index: 22;
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include media-breakpoint-up(md) {
+    z-index: 22;
+  }
+
+  &:not(.is-shown) {
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+  }
+
+  &.is-shown {
+    animation: fadeIn $duration forwards;
+  }
+
+  &__details {
+    position: absolute;
+    top: 161px;
+    left: 23px;
+
+    @include media-breakpoint-up(md) {
+      top: calcPercent(212, 1080) + vh;
+      left: calcPercent(130, 1920) + vw;
+    }
+  }
+
+  &__title {
+    font-family: $FontFamilySerif;
+    font-size: 49px;
+    line-height: 0.82;
+    letter-spacing: -1.05;
+    color: $color-white;
+
+    top: 45px;
+
+    @include media-breakpoint-up(md) {
+      font-size: fluidSize(30, 140, 768, 1920);
+      letter-spacing: -0.156vw;
+    }
+
+    span {
+      display: block;
+      font-size: 29px;
+      line-height: 1.21;
+      letter-spacing: -0.73px;
+      color: $color-light-mustard;
+
+      @include media-breakpoint-up(md) {
+        font-size: fluidSize(20, 80, 768, 1920);
+        letter-spacing: -0.104vw;
+      }
+    }
+  }
+
+  .btn--more {
+    position: fixed;
+    border-color: $color-white;
+    color: $color-white;
+    top: 8vh;
+    right: 5vw;
+
+    @include media-breakpoint-up(md) {
+      top: 35vh;
+      right: unset;
+    }
+
+    &::after {
+      font-size: fluidSize(20, 39, 768, 1920);
+    }
+  }
+
+  &-list {
+    
+    margin-top: 33px;
+    transition: all $duration ease;
+    transition-delay: 200ms;
+
+    &:not(.is-shown) {
+      opacity: 0;
+      z-index: -1;
+      visibility: hidden
+    }
+
+    &__item {
+      font-family: $FontFamilySansSerif;
+      font-size: 14px;
+      color: $color-white;
+    }
+  }
+}

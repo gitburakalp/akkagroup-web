@@ -8,10 +8,25 @@
       font-size: inherit;
       line-height: inherit;
       letter-spacing: inherit;
-      padding: 26px 39px;
+      width: 146.6px;
+      height: 146.6px;
+      transition: all 1s ease;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+
+      &:not(.no-anim) {
+        &.de-active {
+          transform: translateX(75vw) rotate(90deg);
+        }
+      }
 
       @include media-breakpoint-up(md) {
-        padding: 4.486vw 5.58vw
+        width: fluidSize(146.6,293,768,1920);
+        height: fluidSize(146.6,293,768,1920);
       }
 
       &::after {
@@ -20,6 +35,57 @@
         font-family: "Font Awesome 5 Pro";
         font-weight: 300;
         color: inherit;
+      }
+    }
+
+    &--projects {
+      position: absolute;
+      background-color: $color-white;
+      border-radius: 0;
+
+      width: 115px;
+      height: 115px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+
+      font-family: $FontFamilySerif;
+      text-transform: uppercase;
+
+      transition: all 1s ease;
+      top: 20vh;
+      right: 10vw;
+
+      &:not(.is-shown) {
+        opacity: 0;
+        z-index: -1;
+        visibility: hidden
+      }
+
+      &::before {
+        content: "more";
+        display: inline-block;
+        text-transform: uppercase;
+        font-family: $FontFamilySansSerif;
+        font-size: 9px;
+        position: absolute;
+        margin-top: 2rem
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 15px;
+        margin-top: 1.2rem;
+        display: block;
+        border-bottom: 1px solid $color-black;
+        width:50%;
+      }
+
+      @include media-breakpoint-up(md) {
+        display: none
       }
     }
   }

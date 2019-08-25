@@ -35,7 +35,7 @@ ul {
 
 a {
     display: inline-block;
-    color: inherit !important;
+    color: inherit;
     transition: color $duration ease;
 
     &:hover {

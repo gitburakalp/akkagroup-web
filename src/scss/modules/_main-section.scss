@@ -40,7 +40,8 @@
       border-color: $color-white;
 
       @include media-breakpoint-down(sm) {
-        transform: translateY(35%)
+        top: 22.5vh;
+        right: 15px;
       }
 
       &::after {
@@ -51,8 +52,8 @@
         color: $color-white;
         font-size: fluidSize(14, 16, 768, 1920);
         letter-spacing: 0.217vw;
-        transform: translate(40%,-138%);
-        right: 0;
+        right: -7vw;
+        top: -17vh;
       }
     }
   }
@@ -91,6 +92,7 @@
     width: 100%;
     bottom: 0;
     padding: 8px;
+    z-index: 23;
 
     @include media-breakpoint-up(md) {
       border-radius: 5px;
