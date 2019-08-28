@@ -1,35 +1,40 @@
 .figure {
+  display: block;
+  z-index: 19;
+
+  &__item {
+    position: relative;
     display: block;
-    z-index: 19;
+    width: 100%;
+    margin: 0 auto;
+    transition: all 0.8s ease-in-out;
+    overflow: hidden;
 
-    &__item {
-        position: relative;
-        display: block;
-        width: 100%;
-        margin: 0 auto;
-        transition: all 0.8s ease-in-out;
-        
-        &-imgBlock {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: block;
-            max-width: 100%;
-            box-sizing: border-box;
-
-            img {
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                margin: auto;
-                box-sizing: border-box;
-                object-fit: cover;
-            }
-        }
+    &-fill {
+      transition: all 0.8s ease-in-out;
     }
+
+    &-imgBlock {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      max-width: 100%;
+      box-sizing: border-box;
+
+      img {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        box-sizing: border-box;
+        object-fit: cover;
+      }
+    }
+  }
 }

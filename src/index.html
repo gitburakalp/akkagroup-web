@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/main.min.css" />
+    <link rel="stylesheet" href="/css/main.min.css" />
     <style>
       @import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese");
     </style>
@@ -56,6 +56,28 @@
           <a href="" class="btn btn--projects">
             Projects
           </a>
+          <ul class="main-list">
+            <li class="main-list-item">
+              <a href="" class="main-list-link">
+                AKKA HOTELS <span>Antedon</span>
+              </a>
+            </li>
+            <li class="main-list-item">
+              <a href="" class="main-list-link">
+                AKKA HOTELS <span>Alinda</span>
+              </a>
+            </li>
+            <li class="main-list-item">
+              <a href="" class="main-list-link">
+                AKKA HOTELS <span>Claros</span>
+              </a>
+            </li>
+            <li class="main-list-item">
+              <a href="" class="main-list-link">
+                AKKA HOTELS <span>Residence</span>
+              </a>
+            </li>
+          </ul>
         </div>
         <figure class="figure">
           <div class="figure__item">
@@ -66,23 +88,30 @@
           </div>
         </figure>
         <ul class="main-menu">
-          <li class="main-menu__item">
-            <a href="" class="main-menu__link" data-title='AKKA <br class="d-md-none">Tourism' data-btn-title="Tourism<br>For<br>More">
-              AKKA<br />
-              Tourism
-            </a>
+          <li
+            class="main-menu__item"
+            data-title='AKKA <br class="d-md-none">Tourism<span>designs life</span>'
+            data-btn-title="Tourism<br>For<br>More"
+          >
+            AKKA<br />
+            Tourism
           </li>
-          <li class="main-menu__item">
-            <a href="" class="main-menu__link" data-title='AKKA <br class="d-md-none">Contruction' data-btn-title="Construction<br>For<br>More" data-projects="5* Antedon De Luxe,5*Ma Biche,4* Park Claros,3* Surtel,Special Residence,Special Residence 2">
-              AKKA<br />
-              Contruction
-            </a>
+          <li
+            class="main-menu__item"
+            data-title='AKKA <br class="d-md-none">Contruction<span>designs life</span>'
+            data-btn-title="Construction<br>For<br>More"
+            data-projects="5* Antedon De Luxe,5*Ma Biche,4* Park Claros,3* Surtel,Special Residence,Special Residence 2,Ata Houseing Complex,The Supreme Court Quarters,Waterside Houses,K.K.K. Quarters,Tusaş Motor Industry Social Facilitites,Ray Kent,4* Claros,5* Alinda Beach,5* Alatau"
+          >
+            AKKA<br />
+            Contruction
           </li>
-          <li class="main-menu__item">
-            <a href="" class="main-menu__link" data-title='AKKA <br class="d-md-none">Shopping Center' data-btn-title="Shopping<br>For<br>More">
-              AKKA<br />
-              Shopping Center
-            </a>
+          <li
+            class="main-menu__item"
+            data-title='AKKA <br class="d-md-none">Shopping Center<span>designs life</span>'
+            data-btn-title="Shopping<br>For<br>More"
+          >
+            AKKA<br />
+            Shopping Center
           </li>
         </ul>
       </section>
@@ -173,7 +202,7 @@
             </h1>
             <div class="d-flex">
               <ul class="projects-menu">
-                <li class="projects-menu__item">
+                <li class="projects-menu__item" data-trigger="menu--projects" data-title="Construction">
                   <a href="" class="projects-menu__link">
                     Contruction
                   </a>
@@ -290,21 +319,25 @@
         </div>
       </section>
 
-      <section class="fw-section" style="background-image: url('../../images/statics/hotel.jpg')">
+      <section
+        class="fw-section"
+        style="background-image: url('../../images/statics/hotel.jpg')"
+      >
         <div class="fw-section__details">
           <h1 class="fw-section__title" data-elem="title">
-            AKKA<br class="d-md-none">
+            AKKA<br class="d-md-none" />
             Contruction
             <span>designs life</span>
           </h1>
-          <a href="" class="btn--more no-anim" data-elem="btn">
-            CONSTRUCTION<br>
-            FOR<br>
+          <a href="" class="btn--more" data-elem="btn">
+            CONSTRUCTION<br />
+            FOR<br />
             MORE
           </a>
-          <ul class="fw-section-list">
-            
-          </ul>
+          <a href="" class="btn btn--projects">
+            Projects
+          </a>
+          <ul class="fw-section-list"></ul>
         </div>
       </section>
     </main>
@@ -361,7 +394,9 @@
               F. +90 242 824 98 91
             </p>
           </div>
-          <div class="order--1 input-section ml-md-auto col-12 col-md-auto p-0">
+          <div
+            class="order--1 input-section ml-md-auto col-12 col-md-auto p-0 d-none"
+          >
             <input
               type="text"
               class="form-control--transparent"
@@ -384,7 +419,7 @@
             ></textarea>
           </div>
         </div>
-        <ul class="footer-menu">
+        <ul class="footer-menu mt-5">
           <li class="footer-menu__item">
             <a href="" class="footer-menu__link">
               About Us
@@ -406,7 +441,9 @@
             </a>
           </li>
         </ul>
-        <div class="d-flex flex-wrap align-items-center justify-content-center akka-group-section">
+        <div
+          class="d-flex flex-wrap align-items-center justify-content-center akka-group-section"
+        >
           <div class="col-12 text-center col-md-auto">
             <img class="img-fluid" src="images/svg/footer-logo.svg" alt="" />
           </div>
@@ -418,6 +455,34 @@
         </div>
       </div>
     </footer>
+
+    <div class="menu--projects">
+      <div class="close-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <h3 class="menu-title">
+        Building
+      </h3>
+      <ul class="menu">
+        <li class="menu__item">
+          <a href="">
+            ABC
+          </a>
+        </li>
+        <li class="menu__item">
+          <a href="">
+            ABC
+          </a>
+        </li>
+        <li class="menu__item">
+          <a href="">
+            ABC
+          </a>
+        </li>
+      </ul>
+    </div>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/main.js"></script>

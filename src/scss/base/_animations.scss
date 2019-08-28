@@ -1,17 +1,17 @@
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
+.header {
+  @include media-breakpoint-down(sm) {
+    &:not(.is-shown) {
+      .header-menu {
+        transform: translateX(100%);
+      }
+    }
   }
 }
 
-.header {
-  &:not(.is-shown) {
-    .header-menu {
-      transform: translateX(100%)
+%btn--info-animated {
+  .btn--more {
+    &:not(.no-anim) {
+      transform: translateX(75vw) rotate(90deg);
     }
   }
 }
@@ -20,34 +20,133 @@
   &:not(.animated) {
     .btn--projects {
       right: 0;
-      transform: translateX(150%)
+      transform: translateX(150%);
+    }
+
+    @include media-breakpoint-up(md) {
+      .main-list {
+        transform: translateX(200%);
+      }
     }
   }
 
   &.animated {
-    z-index:1000;
+    @include media-breakpoint-down(sm) {
+      z-index: 1000;
+    }
 
     .figure {
       &__item {
-        max-height: 100vh;
+        @include media-breakpoint-down(sm) {
+          max-height: 100vh;
+          transition-delay: 100ms;
+        }
+
+        @include media-breakpoint-up(md) {
+          width: 115%;
+        }
+
+        &-fill {
+          padding-bottom: 667 / 375 * 100%;
+
+          @include media-breakpoint-up(md) {
+            padding-bottom: 1080 / 1920 * 100%;
+          }
+        }
       }
     }
 
     .main-infoBlock {
       text-align: left;
+
+      @include media-breakpoint-up(md) {
+        top: calcPercent(441, 1080) + vh;
+        right: calcPercent(170, 1920) + vw;
+      }
     }
 
     .main-title {
-      font-size: 47px;
+      @include media-breakpoint-down(sm) {
+        transform: scale(0.925);
+      }
+
+      @include media-breakpoint-up(md) {
+        font-size: fluidSize(24, 70, 768, 1920);
+      }
     }
 
     .main-subtitle {
-      font-size: 26px;
+      @include media-breakpoint-down(sm) {
+        transform: scale(0.95);
+      }
+
+      @include media-breakpoint-up(md) {
+        font-size: fluidSize(20, 40, 768, 1920);
+        text-align: right;
+      }
     }
+
+    @extend %btn--info-animated;
+  }
+}
+
+.fw-section {
+  .btn--projects {
+    transition: opacity 0.4s ease;
+  }
+
+  &:not(.animated) {
+    .btn--projects {
+      opacity: 0;
+      transition: unset;
+      z-index: -1;
+      visibility: hidden;
+    }
+  }
+
+  &.animated {
+    height: 100vh;
+
+    @include media-breakpoint-up(md) {
+      background-size: 100%;
+
+      .fw-section {
+        &__details {
+          top: 30vh;
+        }
+
+        &__title {
+          font-size: fluidSize(30, 70, 768, 1920);
+          span {
+            font-size: fluidSize(20, 40, 768, 1920);
+          }
+        }
+      }
+    }
+
+    .btn--projects {
+      transition-delay: 400ms;
+      top: 20vh;
+      right: -15vw;
+    }
+
+    @include media-breakpoint-down(sm) {
+      .fw-section__details {
+        top: 7vh;
+      }
+    }
+
+    @extend %btn--info-animated;
 
     .btn--more {
       &:not(.no-anim) {
-        transform: translateX(75vw) rotate(90deg);
+        @include media-breakpoint-down(md) {
+          transform: translateX(75vw) rotate(90deg);
+        }
+
+        @include media-breakpoint-up(md) {
+          transform: translateX(-25vw) rotate(-90deg);
+        }
       }
     }
   }

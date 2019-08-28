@@ -4,16 +4,18 @@
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  height: 65.3vh;
   margin-top: 0;
-  z-index: 22;
+  z-index: 998;
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  cursor: pointer;
 
-  @include media-breakpoint-up(md) {
-    z-index: 22;
+  @include media-breakpoint-down(sm) {
+    z-index: 1001;
+    transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
   }
 
   &:not(.is-shown) {
@@ -22,14 +24,17 @@
     z-index: -1;
   }
 
-  &.is-shown {
-    animation: fadeIn $duration forwards;
+  @include media-breakpoint-up(md) {
+    background-size: 120%;
+    height: 100%;
+    transition: all 0.4s ease;
   }
 
   &__details {
     position: absolute;
     top: 161px;
     left: 23px;
+    transition: all 0.4s ease;
 
     @include media-breakpoint-up(md) {
       top: calcPercent(212, 1080) + vh;
@@ -49,6 +54,7 @@
     @include media-breakpoint-up(md) {
       font-size: fluidSize(30, 140, 768, 1920);
       letter-spacing: -0.156vw;
+      transition: all 0.4s ease;
     }
 
     span {
@@ -73,7 +79,7 @@
     right: 5vw;
 
     @include media-breakpoint-up(md) {
-      top: 35vh;
+      top: 45vh;
       right: unset;
     }
 
@@ -84,8 +90,11 @@
 
   &-list {
     margin-top: 33px;
-    transition: all $duration ease;
-    transition-delay: 200ms;
+    column-count: 2;
+
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
 
     &:not(.is-shown) {
       opacity: 0;
@@ -93,10 +102,20 @@
       visibility: hidden;
     }
 
+    &.is-shown {
+      transition: all $duration ease;
+      transition-delay: 400ms
+    }
+
     &__item {
       font-family: $FontFamilySansSerif;
       font-size: 14px;
       color: $color-white;
+      line-height: 1.5;
+
+      a {
+        color: inherit
+      }
     }
 
     &.is-black {
