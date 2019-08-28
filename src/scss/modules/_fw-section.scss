@@ -7,7 +7,7 @@
   bottom: 0;
   margin-top: 0;
   z-index: 22;
-  
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -83,7 +83,6 @@
   }
 
   &-list {
-    
     margin-top: 33px;
     transition: all $duration ease;
     transition-delay: 200ms;
@@ -91,13 +90,19 @@
     &:not(.is-shown) {
       opacity: 0;
       z-index: -1;
-      visibility: hidden
+      visibility: hidden;
     }
 
     &__item {
       font-family: $FontFamilySansSerif;
       font-size: 14px;
       color: $color-white;
+    }
+
+    &.is-black {
+      .fw-section-list__item {
+        color: $color-warm-grey;
+      }
     }
   }
 }

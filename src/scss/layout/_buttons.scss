@@ -88,4 +88,23 @@
         display: none
       }
     }
+
+    &--back {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 2rem;
+      line-height: 1;
+      cursor: pointer;
+
+      @include media-breakpoint-up(md) {
+        display: none
+      }
+
+      &::before {
+        content: "\f33a";
+        font-family: "Font Awesome 5 Pro";
+        font-weight: 300;
+      }
+    }
   }

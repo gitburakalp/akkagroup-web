@@ -1,0 +1,10 @@
+.breadcrumb {
+    background-color: transparent;
+    padding: 10px 0;
+
+    &-item {
+        font-family: $FontFamilySerif;
+        font-size: 14px;
+        letter-spacing: -0.3px
+    }
+}

@@ -1,0 +1,29 @@
+.project-details {
+  &__title {
+    font-family: $FontFamilySerif;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: vw(-0.5, 375);
+    color: $color-cherry;
+
+    @include media-breakpoint-up(md) {
+      font-size: fluidSize(21, 50, 768, 1920);
+      letter-spacing: vw(-1.07, 1920);
+    }
+  }
+
+  &__subtitle {
+    font-family: $FontFamilySerif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 2.07;
+    letter-spacing: vw(-0.3, 375);
+    color: $color-black;
+
+    @include media-breakpoint-up(md) {
+      font-size: fluidSize(14, 25, 768, 1920);
+      letter-spacing: vw(-0.54, 1920);
+    }
+  }
+}

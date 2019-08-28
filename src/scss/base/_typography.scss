@@ -58,3 +58,20 @@
         font-size: fluidSize(12,14,768,1920);
     }
 }
+
+.project {
+    &-title {
+        font-family: $FontFamilySerif;
+        font-size: 25px;
+        line-height: 1.12;
+        letter-spacing: vw(-0.54,375);
+
+        @include media-breakpoint-up(md) {
+            font-size: fluidSize(25,50,768,1920);
+
+            br {
+                display: none
+            }
+        }
+    }
+}
