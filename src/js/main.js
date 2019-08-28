@@ -10,15 +10,25 @@ $(".btn--more").each(function() {
 
   $this.on("click", function(e) {
     e.preventDefault();
-    $(this)
-      .siblings(".btn--projects")
-      .addClass("is-shown");
-    $(this).addClass("de-active");
+    var $this = $(this);
+
+    $this.closest(".main-section").addClass("animated");
+  });
+
+  $("html").on("click", function(e) {
+    var $thisTarget = $(e.target);
+    var isBtnMore = $thisTarget.hasClass("btn--more");
+    var $mainSection = $(".main-section");
+
+    if (!isBtnMore) {
+      $mainSection.removeClass("animated");
+    }
   });
 });
 
 $("html").on("click", function(e) {
   if (!$(e.target).hasClass("btn--more")) {
+    $(".main-section").removeClass("animated");
     $(".btn--projects").removeClass("is-shown");
     $(".btn--more").removeClass("de-active");
   }
@@ -31,28 +41,29 @@ $("html").on("click", function(e) {
   }
 });
 
-$(".main-menu")
-  .find(".main-menu__link")
-  .on("click", function(e) {
-    var $this = $(this);
-    var title = $this.data("title");
-    var btnTitle = $this.data("btn-title");
-    var projectList = $this.data("projects").split(",");
+// $(".main-menu")
+//   .find(".main-menu__link")
+//   .on("click", function(e) {
+//     var $this = $(this);
+//     var title = $this.data("title");
+//     var btnTitle = $this.data("btn-title");
+//     var projectList = $this.data("projects").split(",");
 
-    $.each(projectList, (i, e) => {
-      $(".fw-section-list > *").html("");
-      $(".fw-section-list").append(
-        `<li class="fw-section-list__item">${e}</li>`
-      );
-    });
+//     $.each(projectList, (i, e) => {
+//       $(".fw-section-list > *").html("");
+//       $(".fw-section-list").append(
+//         `<li class="fw-section-list__item">${e}</li>`
+//       );
+//     });
 
-    console.log(projectList);
+//     console.log(projectList);
 
-    e.preventDefault();
-    $(".fw-section").addClass("is-shown");
-    $("[data-elem=title]").html(title);
-    $("[data-elem=btn]").html(btnTitle);
-  });
+//     e.preventDefault();
+//     $("html,body").toggleClass("overflow-hidden");
+//     $(".fw-section").addClass("is-shown");
+//     $("[data-elem=title]").html(title);
+//     $("[data-elem=btn]").html(btnTitle);
+//   });
 
 $(".fw-section")
   .find(".btn--more")
@@ -77,12 +88,12 @@ $('[data-elem="swiper"]').each(function(i, e) {
     slidePrevClass: "slider-slide--prev",
     pagination: {
       el: ".slider-pagination",
-      clickable:true,
-      bulletClass:"slider-pagination-bullet",
-      bulletActiveClass:"slider-pagination-bullet--active",
-      modifierClass:"slider-pagination-current",
-      hiddenClass:"slider-pagination-hidden",
-      clickableClass:"slider-pagination-clickable"
+      clickable: true,
+      bulletClass: "slider-pagination-bullet",
+      bulletActiveClass: "slider-pagination-bullet--active",
+      modifierClass: "slider-pagination-current",
+      hiddenClass: "slider-pagination-hidden",
+      clickableClass: "slider-pagination-clickable"
     },
     breakpoints: {
       767: {

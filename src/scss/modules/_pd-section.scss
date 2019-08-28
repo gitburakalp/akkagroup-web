@@ -1,7 +1,8 @@
 .pd {
   &-section {
+    padding-bottom: 5vh;
+
     @include media-breakpoint-up(md) {
-      padding-bottom: 5vh;
       background-position: 90% bottom;
       background-size: 38%;
       background-repeat: no-repeat;

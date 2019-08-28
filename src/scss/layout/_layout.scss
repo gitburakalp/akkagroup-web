@@ -2,8 +2,12 @@ a {
   color: $color-black;
 }
 
+body {
+  background-color: red
+}
+
 .container {
   @include media-breakpoint-up(md) {
-    max-width: calcPercent(1640, 1920) + vw;
+    max-width: calcPercent(1670, 1920) + vw;
   }
 }

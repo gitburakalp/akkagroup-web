@@ -1,9 +1,54 @@
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.header {
+  &:not(.is-shown) {
+    .header-menu {
+      transform: translateX(100%)
+    }
+  }
+}
+
+.main-section {
+  &:not(.animated) {
+    .btn--projects {
+      right: 0;
+      transform: translateX(150%)
+    }
+  }
+
+  &.animated {
+    z-index:1000;
+
+    .figure {
+      &__item {
+        max-height: 100vh;
+      }
     }
 
-    100% {
-        opacity: 1;
+    .main-infoBlock {
+      text-align: left;
     }
+
+    .main-title {
+      font-size: 47px;
+    }
+
+    .main-subtitle {
+      font-size: 26px;
+    }
+
+    .btn--more {
+      &:not(.no-anim) {
+        transform: translateX(75vw) rotate(90deg);
+      }
+    }
+  }
 }
