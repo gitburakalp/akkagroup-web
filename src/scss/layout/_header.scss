@@ -113,6 +113,23 @@
     }
   }
 
+  &.is-white {
+
+    .header-logo {
+      width: calcPercent(170,1920) + vw;
+
+      img {
+        content: url("../../images/svg/footer-logo.svg");
+      }
+    }
+
+    .header-menu {
+      &__item {
+        color: $color-white
+      }
+    }
+  }
+
   &-nav {
     display: flex;
     flex-direction: row;
@@ -199,6 +216,7 @@
       line-height: 1.58;
       letter-spacing: -0.56px;
       text-transform: uppercase;
+      color: inherit;
 
       @include media-breakpoint-up(md) {
         font-size: fluidSize(14, 16, 768, 1920);

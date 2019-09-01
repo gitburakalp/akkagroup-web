@@ -67,6 +67,7 @@
         letter-spacing: vw(-0.54,375);
 
         @include media-breakpoint-up(md) {
+            max-width: 350px;
             font-size: fluidSize(25,50,768,1920);
 
             br {

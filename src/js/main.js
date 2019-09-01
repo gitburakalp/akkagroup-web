@@ -211,3 +211,35 @@ $('[data-elem="swiper"]').each(function(i, e) {
 
   sliders[i] = new Swiper($this, sliderConfig);
 });
+
+$(".projects-submenu .projects-submenu__item").each(function() {
+  var $this = $(this);
+
+  $this.hover(
+    function() {
+      var $projectSection = $this.closest(".projects-section");
+
+      var title = $this.find(".projects-submenu__link").text();
+      var logoSource = $this.data("project-logo");
+      var projectImage = $this.data("project-image");
+      var projectUrl = $this.data("project-url");
+
+      $(".projects-details-section").fadeOut();
+
+      setTimeout(function() {
+        $projectSection.find(".project-title").text(title);
+        $projectSection
+          .find("[data-elem=project-logo]")
+          .attr("src", logoSource);
+        $projectSection
+          .find('[data-elem="project-details-image"]')
+          .attr("src", projectImage);
+        $projectSection
+          .find('[data-elem="project-url"]')
+          .attr('href',projectUrl);
+        $(".projects-details-section").fadeIn();
+      }, 500);
+    },
+    function() {}
+  );
+});
