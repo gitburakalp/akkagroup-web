@@ -16,24 +16,64 @@ var ConstructionList = [
   "5* Alatau"
 ];
 
-$('[data-trigger]').each(function(){
-  var $menuProjects = $('.menu--projects');
+$(".header").each(function() {
+  var $this = $(this),
+    css = "scrolled",
+    ww = $(window).width();
 
-  $(this).on('click',function(e){
+  if ($this && $this.length !== "" && ww >= 768) {
+    let winTop = $(window).scrollTop(),
+      elemTop = $("main > section:nth-child(1)").offset().top,
+      elemHeight = Math.max(
+        document.documentElement.clientHeight,
+        window.innerHeight || 0
+      ),
+      elemBottom = elemTop + elemHeight / 1.5;
+
+    if (elemTop > elemBottom) {
+      $this.addClass(css);
+    } else {
+      $this.removeClass(css);
+    }
+
+    $(window).scroll(function() {
+      winTop = $(window).scrollTop();
+
+      if (winTop >= elemBottom - 400 && winTop < elemBottom) {
+        $this.addClass("tr");
+      } else {
+        $this.removeClass("tr");
+      }
+
+      if (winTop >= elemBottom) {
+        $this.addClass(css);
+      } else {
+        $this.removeClass(css);
+      }
+    });
+  }
+});
+
+$("[data-trigger]").each(function() {
+  var $menuProjects = $(".menu--projects");
+
+  $(this).on("click", function(e) {
     e.preventDefault();
     var $this = $(this);
-    var title  = $this.data('title') + "List";
+    var title = $this.data("title") + "List";
     var thisList = window[title];
 
-    $menuProjects.find('.menu > *').remove();
+    $menuProjects.find(".menu > *").remove();
 
-    $.each(thisList,function(idx,elem){
-      $menuProjects.find('.menu').append(`<li class="menu__item"><a href="">${elem}</a></li>`)
+    $.each(thisList, function(idx, elem) {
+      $menuProjects
+        .find(".menu")
+        .append(`<li class="menu__item"><a href="">${elem}</a></li>`);
     });
 
-    $menuProjects.addClass('show');
-    $menuProjects.find('.close-btn').on('click',function(){
-      $menuProjects.removeClass('show');
+    $menuProjects.addClass("show");
+    $menuProjects.find(".close-btn").on("click", function() {
+      $menuProjects.removeClass("show");
     });
   });
 });

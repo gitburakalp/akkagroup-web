@@ -50,6 +50,26 @@
     position: absolute;
     width: 100%;
     background-color: transparent;
+    transition: transform $duration ease;
+
+    &.tr {
+      transform: translateY(-100%);
+    }
+
+    &.scrolled {
+      position: fixed;
+      background-color: $color-white;
+      box-shadow: 0 0 1px rgba($color-black,0.25);
+
+      .header-nav {
+        padding: 15px;
+      }
+
+      .header-logo {
+        max-width: calcPercent(100,1920) + vw;
+        transition: unset
+      }
+    }
   }
 
   &.is-shown {

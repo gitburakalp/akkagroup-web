@@ -6,7 +6,7 @@
   right: 0;
   height: 65.3vh;
   margin-top: 0;
-  z-index: 998;
+  z-index: 22;
 
   background-position: center;
   background-repeat: no-repeat;
@@ -16,6 +16,7 @@
   @include media-breakpoint-down(sm) {
     z-index: 1001;
     transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: 998;
   }
 
   &:not(.is-shown) {
