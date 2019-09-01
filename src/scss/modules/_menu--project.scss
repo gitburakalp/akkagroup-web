@@ -55,4 +55,10 @@
       }
     }
   }
+
+  @include media-breakpoint-up(md) {
+    &--projects {
+      display: none
+    }
+  }
 }
