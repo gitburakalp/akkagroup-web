@@ -2,7 +2,7 @@
   &-section {
     padding-bottom: 5vh;
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(xl) {
       background-position: 90% bottom;
       background-size: 38%;
       background-repeat: no-repeat;
@@ -52,7 +52,7 @@
     }
 
     &__details {
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(xl) {
         > [class*="col"] {
           &:first-child {
             $val: calcPercent(690, 1640) * 1%;

@@ -2,6 +2,10 @@ a {
   color: $color-black;
 }
 
+body {
+  display: none
+}
+
 .container {
   @include media-breakpoint-up(md) {
     max-width: calcPercent(1670, 1920) + vw;

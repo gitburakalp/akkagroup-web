@@ -1,20 +1,44 @@
-var ConstructionList = [
-  "5* Antedon De Luxe",
-  "5*Ma Biche",
-  "4* Park Claros",
-  "3* Surtel",
-  "Special Residence",
-  "Special Residence 2",
-  "Ata Houseing Complex",
-  "The Supreme Court Quarters",
-  "Waterside Houses",
-  "K.K.K. Quarters",
-  "Tusaş Motor Industry Social Facilitites",
-  "Ray Kent",
-  "4* Claros",
-  "5* Alinda Beach",
-  "5* Alatau"
-];
+var ConstructionList = [];
+
+$('body').fadeIn(1000);
+
+$.ajax({
+  type: "get",
+  url: "/contents/construction-projects.json",
+  contentType: "application/json",
+  dataType: "json",
+  async: false,
+  success: function(response) {
+    $.each(response, function(i, e) {
+      ConstructionList.push(e.Title);
+    });
+  },
+  failure: function(response) {
+    console.log(response);
+  }
+});
+
+$(".projects-submenu").each(function() {
+  var $this = $(this);
+
+  $.ajax({
+    type: "get",
+    url: "/contents/construction-projects.json",
+    contentType: "application/json",
+    dataType: "json",
+    async: false,
+    success: function(response) {
+      $.each(response, function(i, e) {
+        $this.append(
+          `<li class="projects-submenu__item"><a href="${e.Url}" class="projects-submenu__link" target="_blank">${e.Title}</a></li>`
+        );
+      });
+    },
+    failure: function(response) {
+      console.log(response);
+    }
+  });
+});
 
 $(".header").each(function() {
   var $this = $(this),
@@ -23,7 +47,7 @@ $(".header").each(function() {
 
   if ($this && $this.length !== "" && ww >= 768) {
     let winTop = $(window).scrollTop(),
-      elemTop = $("main > section:nth-child(1)").offset().top,
+      elemTop = $("main section:nth-child(1)").offset().top,
       elemHeight = Math.max(
         document.documentElement.clientHeight,
         window.innerHeight || 0
@@ -60,15 +84,27 @@ $("[data-trigger]").each(function() {
   $(this).on("click", function(e) {
     e.preventDefault();
     var $this = $(this);
-    var title = $this.data("title") + "List";
-    var thisList = window[title];
 
     $menuProjects.find(".menu > *").remove();
 
-    $.each(thisList, function(idx, elem) {
-      $menuProjects
-        .find(".menu")
-        .append(`<li class="menu__item"><a href="">${elem}</a></li>`);
+    $.ajax({
+      type: "get",
+      url: "/contents/construction-projects.json",
+      contentType: "application/json",
+      dataType: "json",
+      async: false,
+      success: function(response) {
+        $.each(response, function(i, e) {
+          $menuProjects
+            .find(".menu")
+            .append(
+              `<li class="menu__item"><a href="${e.Url}">${e.Title}</a></li>`
+            );
+        });
+      },
+      failure: function(response) {
+        console.log(response);
+      }
     });
 
     $menuProjects.addClass("show");
@@ -121,7 +157,6 @@ $(".main-menu")
     $this.on("click", function(e) {
       var titleValue = $this.data("title");
       var btnValue = $this.data("btn-title");
-      var projectList = $this.data("projects").split(",");
 
       $("[data-elem=title]").html(titleValue);
       $("[data-elem=btn]").html(btnValue);
@@ -130,10 +165,21 @@ $(".main-menu")
         $(this).remove();
       });
 
-      $.each(projectList, function(idx, elem) {
-        $(".fw-section-list").append(
-          `<li class="fw-section-list__item"><a href="/project-details.html">${elem}</a></li>`
-        );
+      $.ajax({
+        type: "get",
+        url: "/contents/construction-projects.json",
+        contentType: "application/json",
+        dataType: "json",
+        async: false,
+        success: function(response) {
+          $.each(response, function(i, e) {
+            $(".fw-section-list").append(`<li class="fw-section-list__item"><a href="${e.Url}" class="projects-submenu__link" target="_blank">${e.Title}</a></li>`
+            );
+          });
+        },
+        failure: function(response) {
+          console.log(response);
+        }
       });
 
       ww = $(window).width();
@@ -236,10 +282,64 @@ $(".projects-submenu .projects-submenu__item").each(function() {
           .attr("src", projectImage);
         $projectSection
           .find('[data-elem="project-url"]')
-          .attr('href',projectUrl);
+          .attr("href", projectUrl);
         $(".projects-details-section").fadeIn();
       }, 500);
     },
     function() {}
   );
 });
+
+$(document).on("click", 'a[href^="#"]', function(event) {
+  event.preventDefault();
+
+  $("html, body").animate(
+    {
+      scrollTop: $($.attr(this, "href")).offset().top - 125
+    },
+    1000
+  );
+});
+
+//PROJECT DETAILS ->
+
+var urlPathName = window.location.pathname;
+var lang = urlPathName.split("/")[1];
+
+console.log(lang);
+
+if (lang != undefined) {
+  var currentIdx = 0;
+  $.ajax({
+    type: "get",
+    url: "/contents/construction-projects.json",
+    contentType: "application/json",
+    dataType: "json",
+    async: false,
+    success: function(response) {
+      $.each(response, function(i, e) {
+        if (e.Url == urlPathName) {
+          $("[project-title]").html(e.Title);
+          $("[project-description]").html(e.Description);
+          $("[project-description-2]").html(e.Description2);
+          currentIdx = Object.keys(response).indexOf(i);
+        }
+
+        if (Object.keys(response).indexOf(i) == currentIdx + 1) {
+          $("[next-project]").attr("href", e.Url);
+        }
+      });
+    },
+    failure: function(response) {
+      console.log(response);
+    }
+  });
+
+  $(".fw-section-list").each(function() {
+    var $this = $(this);
+
+    $.each(ConstructionList, (i, e) => {
+      $this.append(`<li class="fw-section-list__item">${e}</li>`);
+    });
+  });
+}
