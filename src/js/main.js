@@ -4,7 +4,7 @@ $('body').fadeIn(1000);
 
 $.ajax({
   type: "get",
-  url: "/contents/construction-projects.json",
+  url: "contents/construction-projects.json",
   contentType: "application/json",
   dataType: "json",
   async: false,
@@ -23,7 +23,7 @@ $(".projects-submenu").each(function() {
 
   $.ajax({
     type: "get",
-    url: "/contents/construction-projects.json",
+    url: "contents/construction-projects.json",
     contentType: "application/json",
     dataType: "json",
     async: false,
@@ -210,8 +210,6 @@ $(".fw-section").each(function() {
     var $thisTarget = $(e.target);
     var isBtnMore = $thisTarget.hasClass("btn--more");
 
-    console.log(isBtnMore);
-
     if ($thisTarget.hasClass("fw-section") && $this.hasClass("animated")) {
       if (!isBtnMore) {
         $this.removeClass("animated");
@@ -305,8 +303,6 @@ $(document).on("click", 'a[href^="#"]', function(event) {
 
 var urlPathName = window.location.pathname;
 var lang = urlPathName.split("/")[1];
-
-console.log(lang);
 
 if (lang != undefined) {
   var currentIdx = 0;
