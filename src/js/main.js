@@ -2,13 +2,14 @@ var urlPathName = window.location.pathname;
 var lang = localStorage.getItem("lang");
 var ConstructionList = [];
 var ConstructionUrl =
-  lang == "EN"
-    ? "/contents/construction-projects-en.json"
-    : "/contents/construction-projects-tr.json";
+  lang == null
+    ? "/contents/construction-projects-tr.json"
+    : "/contents/construction-projects-en.json";
 var switchLang = "";
 
-$("body").fadeIn(1000);
-document.title = "AKKA GROUP | " + lang;
+setTimeout(function() {
+  $("body").fadeIn(1000);
+}, 250);
 
 $(
   '<li class="header-menu__item"><a class="header-menu__link" lang-btn></a></li>'
@@ -16,7 +17,10 @@ $(
 
 $("[lang-btn]").each(function() {
   switch (lang) {
-    case undefined:
+    case null:
+      lang = "EN";
+      $(this).text("EN");
+      switchLang = "EN";
       break;
     case "EN":
       $(this).text("TR");
@@ -27,6 +31,8 @@ $("[lang-btn]").each(function() {
       switchLang = "EN";
       break;
   }
+
+  document.title = "AKKA GROUP | " + lang;
 
   $(this).on("click", function() {
     localStorage.setItem("lang", switchLang);
@@ -296,7 +302,7 @@ $('[data-elem="swiper"]').each(function(i, e) {
 $(".projects-submenu .projects-submenu__item").each(function() {
   var $this = $(this);
 
-  $this.on("mouseleave", function() {
+  $this.hover(function() {
     var $projectSection = $this.closest(".projects-section");
 
     var title = $this.find(".projects-submenu__link").text();
