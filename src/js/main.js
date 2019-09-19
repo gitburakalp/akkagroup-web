@@ -141,6 +141,7 @@ $(".main-menu")
       $fwSection.removeClass("is-shown");
       setTimeout(function() {
         $fwSection.addClass("is-shown");
+        $htmlBody.addClass("overflow-hidden");
       }, 200);
       ww < 768 ? $htmlBody.addClass("overflow-hidden") : "";
     });
@@ -170,7 +171,7 @@ $(".fw-section").each(function() {
       if (!isBtnMore) {
         $this.removeClass("animated");
         $(".fw-section-list").removeClass("is-shown");
-        ww < 768 ? $htmlBody.removeClass("overflow-hidden") : "";
+        $htmlBody.removeClass("overflow-hidden");
       }
     } else if (
       $thisTarget.hasClass("fw-section") &&

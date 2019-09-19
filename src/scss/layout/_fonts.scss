@@ -1,9 +1,9 @@
 @font-face {
     font-family: "Big Caslon";
-    src: url("../../fonts/BigCaslonMedium.ttf") format('truetype')
+    src: url($fa-font-path + "/BigCaslonMedium.ttf") format('truetype')
 }
 
 @font-face {
     font-family: "FuturaPT";
-    src: url("../../fonts/FuturaPTBook.otf")
+    src: url($fa-font-path + "/FuturaPTBook.otf")
 }

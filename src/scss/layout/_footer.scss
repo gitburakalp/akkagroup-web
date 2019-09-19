@@ -24,7 +24,7 @@
   }
 
   @include media-breakpoint-up(md) {
-    background-image: url("../../images/svg/footer-bg.svg");
+    background-image: url("../images/svg/footer-bg.svg");
     background-position: calcPercent(190, 1920) + vw calcPercent(115, 1080) + vh;
     background-repeat: no-repeat;
   }
