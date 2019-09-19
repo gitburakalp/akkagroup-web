@@ -1,5 +1,5 @@
 .btn {
-  &:not(.btn--more):not(.btn--projects):not(.btn--back) {
+  &:not(.btn--more):not(.btn--projects):not(.btn--back):not([next-project]) {
     transition: all $duration ease;
     will-change: auto;
 

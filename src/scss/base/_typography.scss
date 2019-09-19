@@ -1,78 +1,83 @@
 .title {
-    font-family: $FontFamilySerif;
-    font-size: 34px;
-    line-height: 1.03;
-    letter-spacing: -0.73px;
-    color: $color-cherry;
-    text-align: center;
+  font-family: $FontFamilySerif;
+  font-size: 34px;
+  line-height: 1.03;
+  letter-spacing: -0.73px;
+  color: $color-cherry;
+  text-align: center;
 
-    + * {
-        margin-top: 33px;
-
-        @include media-breakpoint-up(md) {
-            margin-top: calcPercent(34,1080) + vh;
-        }
-    }
+  + * {
+    margin-top: 33px;
 
     @include media-breakpoint-up(md) {
-        font-size: fluidSize(20,50,768,1920);
-        letter-spacing: -0.056vw;
+      margin-top: calcPercent(34, 1080) + vh;
     }
+  }
 
-    &-section {
-        + * {
-            margin-top: 33px;
-    
-            @include media-breakpoint-up(md) {
-                margin-top: calcPercent(34,1080) + vh;
-            }
-        }
+  @include media-breakpoint-up(md) {
+    font-size: fluidSize(20, 50, 768, 1920);
+    letter-spacing: -0.056vw;
+  }
+
+  &-section {
+    + * {
+      margin-top: 33px;
+
+      @include media-breakpoint-up(md) {
+        margin-top: calcPercent(34, 1080) + vh;
+      }
     }
+  }
 }
 
 .subtitle {
-    font-family: $FontFamilySerif;
-    font-size: 20px;
-    line-height: 1.5;
-    letter-spacing: 0.5px;
-    color: $color-black;
-    text-align: center;
+  font-family: $FontFamilySerif;
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: $color-black;
+  text-align: center;
 
-    @include media-breakpoint-up(md) {
-        font-size: fluidSize(14,30,768,1920);
-        letter-spacing: 0.039vw;
-        text-align: left
-    }
+  @include media-breakpoint-up(md) {
+    font-size: fluidSize(14, 30, 768, 1920);
+    letter-spacing: 0.039vw;
+    text-align: left;
+  }
 }
 
 .description {
-    font-family: $FontFamilySansSerif;
-    font-size: 14px;
-    line-height: 1.43;
-    letter-spacing: -0.016vw;
-    color: $color-steel;
-    text-align: center;
+  font-family: $FontFamilySansSerif;
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: -0.016vw;
+  color: $color-steel;
+  text-align: center;
+  text-transform: capitalize;
 
-    @include media-breakpoint-up(md) {
-        text-align: left;
-        font-size: fluidSize(12,14,768,1920);
-    }
+  + .description {
+    margin-top: vw(16, 1920);
+  }
+
+  @include media-breakpoint-up(md) {
+    text-align: left;
+    font-size: fluidSize(12, 14, 768, 1920);
+  }
 }
 
 .project {
-    &-title {
-        font-family: $FontFamilySerif;
-        font-size: 25px;
-        line-height: 1.12;
-        letter-spacing: vw(-0.54,375);
+  &-title {
+    font-family: $FontFamilySerif;
+    font-size: 25px;
+    line-height: 1.12;
+    letter-spacing: vw(-0.54, 375);
 
-        @include media-breakpoint-up(md) {
-            max-width: 350px;
-            font-size: fluidSize(25,50,768,1920);
+    @include media-breakpoint-up(md) {
+      max-width: vw(350,1920);
+      font-size: fluidSize(25, 50, 768, 1920);
 
-            br {
-                display: none
-            }
-        }
+      br {
+        display: none;
+      }
     }
+  }
 }

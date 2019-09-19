@@ -68,6 +68,7 @@
       flex-direction: column;
 
       &__item {
+      display: inline-block;
         color: $color-warm-grey;
         font-family: $FontFamilySansSerif;
         font-size: fluidSize(14, 20, 768, 1920);

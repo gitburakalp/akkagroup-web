@@ -49,8 +49,17 @@
 
         &__item {
           font-family: $FontFamilySansSerif;
-          font-size: vw(24, 375);
-          line-height: 2;
+          font-size: vw(20, 375);
+          line-height: 1.47;
+          padding: 0.5rem 0;
+
+          + * {
+            border-top: 1px solid rgba($color-dark,0.10)
+          }
+
+          a {
+            line-height: inherit
+          }
         }
       }
     }
