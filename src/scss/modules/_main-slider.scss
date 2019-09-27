@@ -1,0 +1,120 @@
+.main-slider {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 20;
+
+  height: vw(449, 375);
+
+  @include media-breakpoint-up(md) {
+    height: 100vh;
+  }
+
+  &--fade {
+    .main-slider {
+      &-slide {
+        pointer-events: none;
+        transition-property: opacity;
+
+        &--active {
+          pointer-events: auto;
+        }
+      }
+    }
+  }
+
+  &-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+    justify-content: space-between;
+    transform: translate3d(0px, 0, 0);
+  }
+
+  &-slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 1px;
+    transform: translate3d(0px, 0, 0);
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &-pagination {
+    position: absolute;
+    display: flex;
+    flex-wrap: nowrap;
+    box-shadow: 0 0 4px rgba($color-dark, 0.25);
+    justify-content: space-around;
+    z-index: 99;
+    background-color: $color-white;
+
+    @include media-breakpoint-down(sm) {
+      bottom: 0;
+      width: 100%;
+      padding: 12px 20px;
+      transition: bottom 400ms ease;
+    }
+
+    @include media-breakpoint-up(xl) {
+      $px: vw(60, 1920);
+      $py: vw(14, 1920);
+      padding: $py $px;
+      border-radius: 5px;
+    }
+
+    > * {
+      font-family: $FontFamilySerif;
+      font-weight: 500;
+      text-align: center;
+      cursor: pointer;
+
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 100%;
+
+      font-size: 14px;
+      text-transform: uppercase;
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+        border: none;
+      }
+
+      small {
+        text-transform: capitalize;
+        font-size: 12px;
+      }
+
+      @include media-breakpoint-up(md) {
+        font-size: vw(27, 1920);
+
+        small {
+          font-size: vw(25, 1920);
+          text-transform: capitalize;
+        }
+      }
+
+      + * {
+        border-left: 1px solid $color-dark;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      bottom: 5vw;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

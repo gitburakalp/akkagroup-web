@@ -7,9 +7,46 @@ var ConstructionUrl =
     : "/contents/construction-projects-en.json";
 var switchLang = "";
 
-setTimeout(function() {
-  $("body").fadeIn(1000);
-}, 250);
+$(".main-slider").each(function() {
+  const mainSliderItems = [
+    "Akka<br><small>Tourism</small>",
+    "Akka<br><small>Construction</small>",
+    "Akka<br><small>Shopping Center</small>"
+  ];
+
+  var mainSlider = new Swiper(".main-slider", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    effect: "fade",
+    loop: true,
+    containerModifierClass: "main-slider--",
+    wrapperClass: "main-slider-wrapper",
+    slideClass: "main-slider-slide",
+    slideActiveClass: "main-slider-slide--active",
+    slideNextClass: "main-slider-slide--next",
+    slidePrevClass: "main-slider-slide--prev",
+    pagination: {
+      el: ".main-slider-pagination",
+      clickable: true,
+      renderBullet: function(index, className) {
+        return `<span class=${className}>${mainSliderItems[index]}</span>`;
+      }
+    }
+  });
+
+  var ww = $(window).width();
+  var $mainSliderPagination = $(".main-slider .main-slider-pagination");
+
+  if (ww < 768) {
+    window.addEventListener("scroll", function() {
+      $mainSliderPagination.addClass("bt-0");
+
+      $(window).scrollTop() == 0
+        ? $mainSliderPagination.removeClass("bt-0")
+        : "";
+    });
+  }
+});
 
 $(
   '<li class="header-menu__item"><a class="header-menu__link" lang-btn></a></li>'
