@@ -7,9 +7,85 @@
   z-index: 20;
 
   height: vw(449, 375);
+  transition: all 200ms ease-in;
 
   @include media-breakpoint-up(md) {
     height: 100vh;
+  }
+
+  %main-slider-titles {
+    font-family: $FontFamilySerif;
+    font-weight: 500;
+    transition: all 200ms ease-in;
+    position: absolute;
+
+    @include media-breakpoint-up(md) {
+      transition: all 400ms ease-in;
+    }
+  }
+
+  &-title {
+    @extend %main-slider-titles;
+    color: $color-white;
+
+    @include media-breakpoint-down(sm) {
+      letter-spacing: vw(-1.03, 375);
+    }
+
+    @include media-breakpoint-up(md) {
+      font-size: vw(140, 1920);
+      line-height: 0.83;
+    }
+  }
+
+  &-subtitle {
+    @extend %main-slider-titles;
+
+    position: absolute;
+    line-height: 1.2;
+
+    @include media-breakpoint-down(sm) {
+      letter-spacing: vw(-0.73, 375);
+      text-align: center;
+    }
+
+    @include media-breakpoint-up(md) {
+      font-size: vw(80, 1920);
+    }
+  }
+
+  &-menu {
+    display: none;
+
+    @include media-breakpoint-up(md) {
+      display: flex;
+      flex-wrap: wrap;
+      position: absolute;
+      top: vw(600, 1920);
+      right: vw(166, 1920);
+      width: vw(650, 1920);
+      transform: translateX(150%);
+      transition: transform 750ms ease-in;
+
+      &-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+
+      &-link {
+        display: inline-block;
+        font-family: $FontFamilySerif;
+        font-weight: 500;
+        line-height: 1.5;
+        letter-spacing: vw(0.5, 1920);
+        color: $color-dark;
+        font-size: vw(20, 1920);
+
+        span {
+          font-size: vw(30, 1920);
+        }
+      }
+    }
   }
 
   &--fade {
@@ -37,6 +113,16 @@
     transform: translate3d(0px, 0, 0);
   }
 
+  @keyframes bg-anim {
+    0% {
+      background-position: center;
+    }
+
+    100% {
+      background-position: 30% 30%;
+    }
+  }
+
   &-slide {
     flex-shrink: 0;
     width: 100%;
@@ -48,6 +134,39 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    transition: background-position 2s ease;
+
+    &.bg-construction {
+      background-position: 50% 80%;
+      background-image: url("../../images/statics/bg-construction.jpg");
+
+      .circle-btn {
+        @include media-breakpoint-down(md) {
+          top: vw(88, 375);
+          right: vw(18, 375);
+        }
+
+        @include media-breakpoint-up(xl) {
+          top: 25vw;
+          left: 6.8vw
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        background-image: url("../../images/statics/hotel.jpg");
+      }
+    }
+
+    &:not(.bg-construction) {
+      .circle-btn {
+        top: vw(200, 375);
+        right: vw(18, 375);
+
+        @include media-breakpoint-up(xl) {
+          top: vw(400, 1920);
+        }
+      }
+    }
   }
 
   &-pagination {
@@ -59,7 +178,7 @@
     z-index: 99;
     background-color: $color-white;
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       bottom: 0;
       width: 100%;
       padding: 12px 20px;
@@ -67,9 +186,8 @@
     }
 
     @include media-breakpoint-up(xl) {
-      $px: vw(60, 1920);
-      $py: vw(14, 1920);
-      padding: $py $px;
+      width: vw(698, 1920);
+      padding: 13px;
       border-radius: 5px;
     }
 
@@ -83,7 +201,7 @@
       flex-grow: 1;
       max-width: 100%;
 
-      font-size: 14px;
+      font-size: vw(14,375);
       text-transform: uppercase;
 
       &:focus {
@@ -94,10 +212,10 @@
 
       small {
         text-transform: capitalize;
-        font-size: 12px;
+        font-size: vw(12,375);
       }
 
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(xl) {
         font-size: vw(27, 1920);
 
         small {
@@ -111,10 +229,180 @@
       }
     }
 
-    @include media-breakpoint-up(md) {
-      bottom: 5vw;
+    @include media-breakpoint-up(xl) {
+      bottom: vw(47, 1920);
       left: 50%;
       transform: translateX(-50%);
+    }
+  }
+
+  &:not(.is-active) {
+    .main-slider-slide {
+      &:not(.bg-construction) {
+        .main-slider-title {
+          @include media-breakpoint-down(md) {
+            top: vw(81, 375);
+            left: vw(39, 375);
+            font-size: vw(48, 375);
+          }
+
+          @include media-breakpoint-up(xl) {
+            top: vw(590,1920);
+            right: vw(260,1920);
+          }
+        }
+
+        .main-slider-subtitle {
+          @include media-breakpoint-down(md) {
+            top: vw(120, 375);
+            left: vw(60, 375);
+            font-size: vw(29, 375);
+          }
+
+          @include media-breakpoint-up(xl) {
+            top: vw(700,1920);
+            right: vw(411,1920);
+          }
+        }
+      }
+
+      &.bg-construction {
+        .main-slider-title {
+          @include media-breakpoint-down(md) {
+            top: vw(160, 375);
+            left: vw(23, 375);
+            font-size: vw(60, 375);
+          }
+
+          @include media-breakpoint-up(xl) {
+            top: vw(220,1920);
+            left: vw(131,1920);
+            font-size: vw(140,1920)
+          }
+        }
+
+        .main-slider-subtitle {
+          @include media-breakpoint-down(md) {
+            top: vw(280, 375);
+            left: vw(23, 375);
+            font-size: vw(35, 375);
+          }
+
+          @include media-breakpoint-up(xl) {
+            top: vw(340,1920);
+            left: vw(131,1920);
+            font-size: vw(80,1920)
+          }
+        }
+
+        .construction-menu {
+          opacity: 0;
+          visibility: hidden;
+          z-index: -1;
+        }
+      }
+    }
+  }
+
+  &.is-active {
+    .main-slider-slide {
+      .project-btn {
+        top: vw(325, 375);
+        right: vw(25, 375);
+      }
+
+      &:not(.bg-construction) {
+        .main-slider-title {
+          @include media-breakpoint-down(md) {
+            top: vw(100, 375);
+            left: vw(52, 375);
+            font-size: vw(47, 375);
+          }
+
+          @include media-breakpoint-up(xl) {
+            top: vw(440,1920);
+            right: vw(166,1920);
+            font-size: vw(64,1920)
+          }
+        }
+
+        .main-slider-subtitle {
+          @include media-breakpoint-down(md) {
+            top: vw(140, 375);
+            left: vw(52, 375);
+            font-size: vw(26, 375);
+          }
+
+          @include media-breakpoint-up(xl) {
+            top: vw(500,1920);
+            right: vw(166,1920);
+            font-size: vw(54,1920)
+          }
+        }
+
+        .circle-btn {
+            transform: translate(150%, 0) rotate(45deg);
+        }
+      }
+
+      &.bg-construction {
+        .main-slider-title {
+          @include media-breakpoint-down(md) {
+            top: vw(45, 375);
+            left: vw(48, 375);
+            font-size: vw(49, 375);
+          }
+
+          @include media-breakpoint-up(xl) {
+            top: vw(327,1920);
+            left: vw(160,1920);
+            font-size: vw(91,1920)
+          }
+        }
+
+        .main-slider-subtitle {
+          @include media-breakpoint-down(md) {
+            top: vw(140, 375);
+            left: vw(48, 375);
+            font-size: vw(29, 375);
+          }
+
+          @include media-breakpoint-up(xl) {
+            top: vw(400,1920);
+            left: vw(160,1920);
+            font-size: vw(52,1920)
+          }
+        }
+
+        .circle-btn {
+          transform: translate(150%, 0) rotate(45deg);
+          @include media-breakpoint-up(xl) {
+            transform: translate(-150%, 0) rotate(-45deg);
+          }
+        }
+
+        .construction-menu {
+          opacity: 1;
+          visibility: visible;
+          z-index: 29;
+        }
+      }
+    }
+
+    .main-slider-slide {
+      animation: bg-anim 400ms ease;
+      background-position: 30% 30%;
+    }
+
+    @include media-breakpoint-down(sm) {
+      height: vw(547, 375);
+      z-index: 999;
+    }
+
+    @include media-breakpoint-up(xl) {
+      .main-slider-menu {
+        transform: translateX(0);
+      }
     }
   }
 }

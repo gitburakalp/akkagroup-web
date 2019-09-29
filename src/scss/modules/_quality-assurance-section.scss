@@ -2,7 +2,7 @@
   position: relative;
 
   &__details {
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       .title {
         position: absolute;
         top: calcPercent(137, 667) + vh;
@@ -27,7 +27,7 @@
       }
     }
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(xl) {
       width: 385px;
       margin-left: auto;
       padding-top: calcPercent(168,1080) + vh

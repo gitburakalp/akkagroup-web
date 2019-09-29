@@ -3,12 +3,12 @@
     display: flex;
     flex-direction: column;
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       margin: 0 auto;
     }
 
     + * {
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(xl) {
         margin-left: calcPercent(20, 1920) + vw;
         padding-left: calcPercent(20, 1920) + vw;
 
@@ -32,7 +32,7 @@
         color: $color-dark;
       }
 
-      @include media-breakpoint-down(sm) {
+      @include media-breakpoint-down(md) {
         padding-top: 20px;
         padding-bottom: 20px;
 
@@ -41,7 +41,7 @@
         }
       }
 
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(xl) {
         text-align: right;
       }
     }
@@ -53,7 +53,7 @@
       letter-spacing: 6px;
       color: inherit;
 
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(xl) {
         font-size: fluidSize(16, 40, 768, 1920);
         line-height: 1.28;
         letter-spacing: -0.045vw;
@@ -61,7 +61,7 @@
     }
   }
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(xl) {
     &-submenu {
       position: relative;
       display: flex;
@@ -93,7 +93,7 @@
   }
 
   &-menus-section {
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(xl) {
       width: calcPercent(900, 1920) + vw;
       margin-right: auto;
     }
@@ -103,18 +103,18 @@
     display: flex;
     flex-direction: row;
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       justify-content: center
     }
 
     .title {
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(xl) {
         text-align: left;
       }
       + * {
         margin-top: 57px;
 
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-up(xl) {
           margin-top: calcPercent(82, 1080) + vh;
         }
       }
@@ -122,7 +122,7 @@
 
     padding-bottom: 75px;
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(xl) {
       padding-bottom: calcPercent(202, 1080) + vh;
       margin-right: calcPercent(-140, 1920) + vw;
     }
@@ -131,11 +131,11 @@
   &-details {
     &-section {
 
-      @include media-breakpoint-down(sm) {
+      @include media-breakpoint-down(md) {
         display: none
       }
 
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(xl) {
         flex-basis: 0;
         flex-grow: 1;
         max-width: 100%;

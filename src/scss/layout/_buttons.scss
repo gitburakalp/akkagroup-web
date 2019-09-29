@@ -60,6 +60,7 @@
     transition: all 0.6s ease-in;
     top: 40vh;
     right: 10vw;
+    cursor: pointer;
 
     &::before {
       content: "more";
@@ -107,7 +108,7 @@
 }
 
 .close-btn {
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     position: absolute;
     right: 30px;
     width: 25px;
@@ -136,5 +137,98 @@
         transform-origin: right bottom;
       }
     }
+  }
+}
+
+.circle-btn {
+  display: inline-block;
+  width: vw(145, 375);
+  height: vw(145, 375);
+  border-radius: 100%;
+  border: 1px solid $color-white;
+  color: $color-dark !important;
+
+  font-family: $FontFamilyFuturaPT;
+  font-weight: 400;
+  font-size: vw(10,375);
+  letter-spacing: vw(3.9, 375);
+
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-transform: uppercase;
+
+  transition: all 500ms ease-in;
+  cursor: pointer;
+
+  &.is-white {
+    color: $color-white !important
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: vw(293, 1920);
+    height: vw(293, 1920);
+    top: vw(390, 1920);
+    right: vw(100, 1920);
+    font-size: vw(16, 1920);
+    letter-spacing: vw(4, 1920);
+  }
+
+  &::after {
+    content: "\f178";
+    display: block;
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 300;
+    color: $color-white;
+    font-size: vw(35, 375);
+
+    @include media-breakpoint-up(xl) {
+      font-size: vw(39, 1920);
+    }
+  }
+}
+
+.project-btn {
+  display: inline-block;
+  width: vw(116, 375);
+  height: vw(116, 375);
+
+  background-color: $color-white;
+  color: $color-dark;
+  font-family: $FontFamilySerif;
+  font-size: vw(13, 375);
+  line-height: 1.15;
+
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: vw(40, 375);
+
+  transition: right 600ms ease-in;
+
+  @include media-breakpoint-down(md) {
+    top: vw(280, 375);
+    transform: translateY(-50%);
+    right: -100%;
+  }
+
+  @include media-breakpoint-up(xl) {
+    display: none
+  }
+
+  &::after {
+    content: "MORE ____________";
+    display: block;
+    font-family: $FontFamilySansSerif;
+    font-size: vw(9, 375);
+    margin-top: vw(26, 375);
+    text-align: left;
+    margin-left: vw(16, 375);
   }
 }

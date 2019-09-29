@@ -11,3 +11,7 @@ body {
     max-width: calcPercent(1670, 1920) + vw;
   }
 }
+
+.text-mustard {
+  color: $color-light-mustard !important;
+}

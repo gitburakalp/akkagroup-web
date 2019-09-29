@@ -5,7 +5,18 @@ var ConstructionUrl =
   lang == null
     ? "/contents/construction-projects-tr.json"
     : "/contents/construction-projects-en.json";
+
+var TravelUrl =
+  lang == null ? "/contents/travel-tr.json" : "/contents/travel-en.json";
+
 var switchLang = "";
+
+var TravelList = [
+  "AKKA HOTELS Antedon",
+  "AKKA HOTELS Alinda",
+  "AKKA HOTELS Claros",
+  "AKKA HOTELS Residence"
+];
 
 $(".main-slider").each(function() {
   const mainSliderItems = [
@@ -17,6 +28,7 @@ $(".main-slider").each(function() {
   var mainSlider = new Swiper(".main-slider", {
     slidesPerView: 1,
     spaceBetween: 30,
+    touchRatio: 0,
     effect: "fade",
     loop: true,
     containerModifierClass: "main-slider--",
@@ -31,13 +43,24 @@ $(".main-slider").each(function() {
       renderBullet: function(index, className) {
         return `<span class=${className}>${mainSliderItems[index]}</span>`;
       }
+    },
+    breakpoints: {
+      1280: {
+        touchRatio: 1
+      }
     }
+  });
+
+  $(".circle-btn").on("click", function() {
+    $(this)
+      .closest(".main-slider")
+      .toggleClass("is-active");
   });
 
   var ww = $(window).width();
   var $mainSliderPagination = $(".main-slider .main-slider-pagination");
 
-  if (ww < 768) {
+  if (ww < 1280) {
     window.addEventListener("scroll", function() {
       $mainSliderPagination.addClass("bt-0");
 
@@ -46,6 +69,16 @@ $(".main-slider").each(function() {
         : "";
     });
   }
+
+  $("html,body").on("click", function(e) {
+    !$(e.target).hasClass("project-btn") &&
+    !$(e.target).hasClass("circle-btn") &&
+    $(e.target)
+      .closest(".main-slider")
+      .hasClass("is-active")
+      ? $(".main-slider").removeClass("is-active")
+      : "";
+  });
 });
 
 $(
@@ -93,28 +126,6 @@ $.ajax({
   }
 });
 
-$(".projects-submenu").each(function() {
-  var $this = $(this);
-
-  $.ajax({
-    type: "get",
-    url: ConstructionUrl,
-    contentType: "application/json",
-    dataType: "json",
-    async: false,
-    success: function(response) {
-      $.each(response, function(i, e) {
-        $this.append(
-          `<li class="projects-submenu__item"><a href="${e.Url}" class="projects-submenu__link" >${e.Title}</a></li>`
-        );
-      });
-    },
-    failure: function(response) {
-      console.log(response);
-    }
-  });
-});
-
 $(".header").each(function() {
   var $this = $(this),
     css = "scrolled",
@@ -153,18 +164,47 @@ $(".header").each(function() {
   }
 });
 
-$("[data-trigger]").each(function() {
+$(".projects-submenu").each(function() {
+  var $this = $(this);
+
+  $.ajax({
+    type: "get",
+    url: ConstructionUrl,
+    contentType: "application/json",
+    dataType: "json",
+    async: false,
+    success: function(response) {
+      $.each(response, function(i, e) {
+        $this.append(
+          `<li class="projects-submenu__item"><a href="${e.Url}" class="projects-submenu__link" >${e.Title}</a></li>`
+        );
+      });
+    },
+    failure: function(response) {
+      console.log(response);
+    }
+  });
+});
+
+$("[data-trigger]:not(.circle-btn)").each(function() {
   var $menuProjects = $(".menu--projects");
 
   $(this).on("click", function(e) {
     e.preventDefault();
     var $this = $(this);
 
+    console.log($this.data("title"));
+
+    var thisUrl = window[$this.data("title") + "Url"];
+
+    console.log(thisUrl);
+
+    $(".menu-title").html($(this).data("title"));
     $menuProjects.find(".menu > *").remove();
 
     $.ajax({
       type: "get",
-      url: ConstructionUrl,
+      url: thisUrl,
       contentType: "application/json",
       dataType: "json",
       async: false,
@@ -189,6 +229,32 @@ $("[data-trigger]").each(function() {
   });
 });
 
+$('.circle-btn[data-trigger]').each(function(){
+  var $constrMenu = $('.construction-menu');
+
+  $(this).on('click',function(){
+    $constrMenu.find("*").remove();
+
+    $.ajax({
+    type: "get",
+    url: ConstructionUrl,
+    contentType: "application/json",
+    dataType: "json",
+    async: false,
+    success: function(response) {
+      $.each(response, function(i, e) {
+        $constrMenu.append(
+          `<li class="construction-menu-item"><a href="${e.Url}" class="construction-menu-link" >${e.Title}</a></li>`
+        );
+      });
+    },
+    failure: function(response) {
+      console.log(response);
+    }
+  });
+  });
+});
+
 $(".hamburger").on("click", function() {
   $("html,body").toggleClass("overflow-hidden");
   $(this)
@@ -208,7 +274,7 @@ $(".btn--more").each(function() {
     var $this = $(this);
 
     $this.closest(".main-section").addClass("animated");
-    ww < 768 ? $htmlBody.addClass("overflow-hidden") : "";
+    ww < 1280 ? $htmlBody.addClass("overflow-hidden") : "";
   });
 
   $("html").on("click", function(e) {
@@ -218,7 +284,7 @@ $(".btn--more").each(function() {
 
     if (!isBtnMore) {
       $mainSection.removeClass("animated");
-      ww < 768 ? $htmlBody.removeClass("overflow-hidden") : "";
+      ww < 1280 ? $htmlBody.removeClass("overflow-hidden") : "";
     }
   });
 });
@@ -280,7 +346,7 @@ $(".fw-section").each(function() {
       ww = $(window).width();
       e.preventDefault();
       $this.addClass("animated");
-      ww < 768 ? $htmlBody.addClass("overflow-hidden") : "";
+      ww < 1280 ? $htmlBody.addClass("overflow-hidden") : "";
       $(".fw-section-list").addClass("is-shown");
     });
   });
@@ -363,16 +429,46 @@ $(".projects-submenu .projects-submenu__item").each(function() {
   });
 });
 
-$(document).on("click", 'a[href^="#"]', function(event) {
-  event.preventDefault();
-
-  $("html, body").animate(
-    {
-      scrollTop: $($.attr(this, "href")).offset().top - 125
-    },
-    1000
-  );
-});
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, "") ==
+        this.pathname.replace(/^\//, "") &&
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $("html, body").animate(
+          {
+            scrollTop: target.offset().top - 100
+          },
+          1000,
+          function() {
+            // Callback after animation
+            // Must change focus!
+            var $target = $(target);
+            //$target.focus();
+            if ($target.is(":focus")) {
+              // Checking if the target was focused
+              return false;
+            } else {
+              $target.attr("tabindex", "-1"); // Adding tabindex for elements not focusable
+              //$target.focus(); // Set focus again
+            }
+          }
+        );
+      }
+    }
+  });
 
 //PROJECT DETAILS ->
 

@@ -1,0 +1,42 @@
+.construction-menu {
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+
+    @include media-breakpoint-up(xl) {
+        position: absolute;
+        top: vw(500,1920);
+        left: 8.3vw;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        max-width: 50%;
+        transition: all 400ms ease-in;
+
+        &-item {
+            flex: 0 0 50%;
+            max-width: 50%;
+
+            &:nth-child(n + 3) {
+                margin-top: 0.5rem
+            }
+        }
+
+        &-link {
+            font-family: $FontFamilySansSerif;
+            font-weight: 400;
+            color: $color-white;
+            cursor: pointer;
+            font-size: fluidSize(12,14,768,1920);
+            
+            &:not([href]):not([tabindex]) {
+                color: $color-white;
+
+                &:hover {
+                    color: darken($color-white,20%)
+                }
+            }
+        }
+    }
+}

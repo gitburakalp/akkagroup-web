@@ -9,12 +9,12 @@
   + * {
     margin-top: 33px;
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(xl) {
       margin-top: calcPercent(34, 1080) + vh;
     }
   }
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(xl) {
     font-size: fluidSize(20, 50, 768, 1920);
     letter-spacing: -0.056vw;
   }
@@ -23,7 +23,7 @@
     + * {
       margin-top: 33px;
 
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(xl) {
         margin-top: calcPercent(34, 1080) + vh;
       }
     }
@@ -38,7 +38,7 @@
   color: $color-black;
   text-align: center;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(xl) {
     font-size: fluidSize(14, 30, 768, 1920);
     letter-spacing: 0.039vw;
     text-align: left;
@@ -58,7 +58,7 @@
     margin-top: vw(16, 1920);
   }
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(xl) {
     text-align: left;
     font-size: fluidSize(12, 14, 768, 1920);
   }
@@ -71,7 +71,7 @@
     line-height: 1.12;
     letter-spacing: vw(-0.54, 375);
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(xl) {
       max-width: vw(350,1920);
       font-size: fluidSize(25, 50, 768, 1920);
 
