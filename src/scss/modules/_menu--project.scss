@@ -1,5 +1,5 @@
 .menu {
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &--projects {
       position: fixed;
       top: 0;
@@ -54,11 +54,11 @@
           padding: 0.5rem 0;
 
           + * {
-            border-top: 1px solid rgba($color-dark,0.10)
+            border-top: 1px solid rgba($color-dark, 0.1);
           }
 
           a {
-            line-height: inherit
+            line-height: inherit;
           }
         }
       }
@@ -67,7 +67,7 @@
 
   @include media-breakpoint-up(xl) {
     &--projects {
-      display: none
+      display: none;
     }
   }
 }

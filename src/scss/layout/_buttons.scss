@@ -108,7 +108,7 @@
 }
 
 .close-btn {
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     position: absolute;
     right: 30px;
     width: 25px;
@@ -150,7 +150,7 @@
 
   font-family: $FontFamilyFuturaPT;
   font-weight: 400;
-  font-size: vw(10,375);
+  font-size: vw(10, 375);
   letter-spacing: vw(3.9, 375);
 
   position: absolute;
@@ -166,7 +166,7 @@
   cursor: pointer;
 
   &.is-white {
-    color: $color-white !important
+    color: $color-white !important;
   }
 
   @include media-breakpoint-up(xl) {
@@ -212,14 +212,14 @@
 
   transition: right 600ms ease-in;
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     top: vw(280, 375);
     transform: translateY(-50%);
     right: -100%;
   }
 
   @include media-breakpoint-up(xl) {
-    display: none
+    display: none;
   }
 
   &::after {

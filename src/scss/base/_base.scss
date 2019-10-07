@@ -156,14 +156,39 @@ p {
     background-color: transparent;
     border-radius: 0;
     color: $color-steel;
-    font-size: 20px;
+    font-size: vw(20, 375);
 
     @include media-breakpoint-up(md) {
-      font-size: fluidSize(12, 14, 768, 1280);
+      font-size: vw(14, 1280);
     }
 
     @include media-breakpoint-up(xl) {
-      font-size: fluidSize(16, 20, 1280, 1920);
+      font-size: vw(20, 1920);
     }
+  }
+}
+
+.btn {
+  font-size: vw(14, 375);
+
+  &-primary {
+    border: 1px solid $color-white;
+    font-weight: 500;
+    background-color: transparent;
+
+    @include hover-focus-active {
+      color: $color-dark;
+      background-color: $color-white;
+      border: 1px solid $color-white;
+      transform: translate(0) !important;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: vw(16, 1280);
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: vw(16, 1920);
   }
 }

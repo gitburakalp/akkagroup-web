@@ -123,6 +123,17 @@
     }
   }
 
+  @keyframes bg-anim-md {
+    0% {
+      background-size: 108vw;
+    }
+
+    100% {
+      background-size: 100vw;
+      background-position: 100%;
+    }
+  }
+
   &-slide {
     flex-shrink: 0;
     width: 100%;
@@ -136,19 +147,24 @@
     background-size: cover;
     transition: background-position 2s ease;
 
+    @include media-breakpoint-up(xl) {
+      background-size: 108vw;
+      background-position: 100%;
+    }
+
     &.bg-construction {
       background-position: 50% 80%;
       background-image: url("../../images/statics/bg-construction.jpg");
 
       .circle-btn {
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(lg) {
           top: vw(88, 375);
           right: vw(18, 375);
         }
 
         @include media-breakpoint-up(xl) {
           top: 25vw;
-          left: 6.8vw
+          left: 6.8vw;
         }
       }
 
@@ -163,7 +179,7 @@
         right: vw(18, 375);
 
         @include media-breakpoint-up(xl) {
-          top: vw(400, 1920);
+          top: vw(360, 1920);
         }
       }
     }
@@ -178,7 +194,7 @@
     z-index: 99;
     background-color: $color-white;
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(lg) {
       bottom: 0;
       width: 100%;
       padding: 12px 20px;
@@ -201,7 +217,7 @@
       flex-grow: 1;
       max-width: 100%;
 
-      font-size: vw(14,375);
+      font-size: vw(14, 375);
       text-transform: uppercase;
 
       &:focus {
@@ -212,7 +228,7 @@
 
       small {
         text-transform: capitalize;
-        font-size: vw(12,375);
+        font-size: vw(12, 375);
       }
 
       @include media-breakpoint-up(xl) {
@@ -240,58 +256,58 @@
     .main-slider-slide {
       &:not(.bg-construction) {
         .main-slider-title {
-          @include media-breakpoint-down(md) {
+          @include media-breakpoint-down(lg) {
             top: vw(81, 375);
             left: vw(39, 375);
             font-size: vw(48, 375);
           }
 
           @include media-breakpoint-up(xl) {
-            top: vw(590,1920);
-            right: vw(260,1920);
+            top: vw(550, 1920);
+            right: vw(260, 1920);
           }
         }
 
         .main-slider-subtitle {
-          @include media-breakpoint-down(md) {
+          @include media-breakpoint-down(lg) {
             top: vw(120, 375);
             left: vw(60, 375);
             font-size: vw(29, 375);
           }
 
           @include media-breakpoint-up(xl) {
-            top: vw(700,1920);
-            right: vw(411,1920);
+            top: vw(660, 1920);
+            right: vw(411, 1920);
           }
         }
       }
 
       &.bg-construction {
         .main-slider-title {
-          @include media-breakpoint-down(md) {
+          @include media-breakpoint-down(lg) {
             top: vw(160, 375);
             left: vw(23, 375);
             font-size: vw(60, 375);
           }
 
           @include media-breakpoint-up(xl) {
-            top: vw(220,1920);
-            left: vw(131,1920);
-            font-size: vw(140,1920)
+            top: vw(220, 1920);
+            left: vw(131, 1920);
+            font-size: vw(140, 1920);
           }
         }
 
         .main-slider-subtitle {
-          @include media-breakpoint-down(md) {
+          @include media-breakpoint-down(lg) {
             top: vw(280, 375);
             left: vw(23, 375);
             font-size: vw(35, 375);
           }
 
           @include media-breakpoint-up(xl) {
-            top: vw(340,1920);
-            left: vw(131,1920);
-            font-size: vw(80,1920)
+            top: vw(340, 1920);
+            left: vw(131, 1920);
+            font-size: vw(80, 1920);
           }
         }
 
@@ -313,64 +329,64 @@
 
       &:not(.bg-construction) {
         .main-slider-title {
-          @include media-breakpoint-down(md) {
+          @include media-breakpoint-down(lg) {
             top: vw(100, 375);
             left: vw(52, 375);
             font-size: vw(47, 375);
           }
 
           @include media-breakpoint-up(xl) {
-            top: vw(440,1920);
-            right: vw(166,1920);
-            font-size: vw(64,1920)
+            top: vw(440, 1920);
+            right: vw(166, 1920);
+            font-size: vw(64, 1920);
           }
         }
 
         .main-slider-subtitle {
-          @include media-breakpoint-down(md) {
+          @include media-breakpoint-down(lg) {
             top: vw(140, 375);
             left: vw(52, 375);
             font-size: vw(26, 375);
           }
 
           @include media-breakpoint-up(xl) {
-            top: vw(500,1920);
-            right: vw(166,1920);
-            font-size: vw(54,1920)
+            top: vw(500, 1920);
+            right: vw(166, 1920);
+            font-size: vw(54, 1920);
           }
         }
 
         .circle-btn {
-            transform: translate(150%, 0) rotate(45deg);
+          transform: translate(150%, 0) rotate(45deg);
         }
       }
 
       &.bg-construction {
         .main-slider-title {
-          @include media-breakpoint-down(md) {
+          @include media-breakpoint-down(lg) {
             top: vw(45, 375);
             left: vw(48, 375);
             font-size: vw(49, 375);
           }
 
           @include media-breakpoint-up(xl) {
-            top: vw(327,1920);
-            left: vw(160,1920);
-            font-size: vw(91,1920)
+            top: vw(327, 1920);
+            left: vw(160, 1920);
+            font-size: vw(91, 1920);
           }
         }
 
         .main-slider-subtitle {
-          @include media-breakpoint-down(md) {
+          @include media-breakpoint-down(lg) {
             top: vw(140, 375);
             left: vw(48, 375);
             font-size: vw(29, 375);
           }
 
           @include media-breakpoint-up(xl) {
-            top: vw(400,1920);
-            left: vw(160,1920);
-            font-size: vw(52,1920)
+            top: vw(400, 1920);
+            left: vw(160, 1920);
+            font-size: vw(52, 1920);
           }
         }
 
@@ -392,6 +408,12 @@
     .main-slider-slide {
       animation: bg-anim 400ms ease;
       background-position: 30% 30%;
+
+      @include media-breakpoint-up(md) {
+        animation: bg-anim-md 400ms ease-in;
+        background-size: 100vw;
+        background-position: 100%;
+      }
     }
 
     @include media-breakpoint-down(sm) {

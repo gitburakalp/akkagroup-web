@@ -2,7 +2,7 @@
   position: relative;
 
   &__details {
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(lg) {
       .title {
         position: absolute;
         top: calcPercent(137, 667) + vh;
@@ -22,15 +22,15 @@
       }
 
       .description {
-          padding-left: 34px;
-          padding-right: 34px;
+        padding-left: 34px;
+        padding-right: 34px;
       }
     }
 
     @include media-breakpoint-up(xl) {
       width: 385px;
       margin-left: auto;
-      padding-top: calcPercent(168,1080) + vh
+      padding-top: calcPercent(168, 1080) + vh;
     }
   }
 }

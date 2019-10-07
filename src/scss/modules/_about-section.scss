@@ -1,42 +1,42 @@
 .about-section {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    @include media-breakpoint-down(md) {
-        max-width: calcPercent(330,375) + vw;
-        margin-left:auto;
-        margin-right: auto;
-    }
+  @include media-breakpoint-down(lg) {
+    max-width: calcPercent(330, 375) + vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
+  @include media-breakpoint-up(xl) {
+    flex-direction: row;
+    align-items: center;
+    height: calcPercent(987, 1080) + vh;
+  }
+
+  &__details {
     @include media-breakpoint-up(xl) {
-        flex-direction: row;
-        align-items: center;
-        height: calcPercent(987,1080) + vh;    
+      max-width: calcPercent(820, 1920) + vw;
+      margin-left: auto;
+      margin-right: calcPercent(140, 1920) + vw;
     }
+  }
 
-    &__details {
-        @include media-breakpoint-up(xl) {
-            max-width: calcPercent(820,1920) + vw;
-            margin-left: auto;
-            margin-right: calcPercent(140,1920) + vw
+  &__imgBlock {
+    @include media-breakpoint-up(xl) {
+      width: 71vw;
+      position: absolute;
+      z-index: -1;
+      margin-left: -15%;
+
+      .figure {
+        &__item {
+          max-height: calcPercent(987, 1080) + vh;
+          &-fill {
+            padding-bottom: 987 / 1090 * 100%;
+          }
         }
+      }
     }
-
-    &__imgBlock {
-        @include media-breakpoint-up(xl) {
-            width: 71vw;
-            position: absolute;
-            z-index: -1;
-            margin-left: -15%;
-
-            .figure {
-                &__item{
-                    max-height: calcPercent(987,1080) + vh;
-                    &-fill {
-                        padding-bottom: 987 / 1090 * 100%
-                    }
-                }
-            }
-        }
-    } 
+  }
 }

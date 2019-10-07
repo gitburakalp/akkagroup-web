@@ -72,8 +72,8 @@
     letter-spacing: vw(-0.54, 375);
 
     @include media-breakpoint-up(xl) {
-      max-width: vw(350,1920);
-      font-size: fluidSize(25, 50, 768, 1920);
+      max-width: 30vw;
+      font-size: vw(40, 1920);
 
       br {
         display: none;

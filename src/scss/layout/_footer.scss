@@ -6,24 +6,24 @@
   padding-bottom: 135px;
 
   .order--1 {
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(lg) {
       order: -1;
       margin-bottom: 22px;
     }
   }
 
   .input-section {
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(xl) {
       width: calcPercent(398, 1920) + vw;
     }
   }
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(xl) {
     padding-top: calcPercent(153, 1080) + vh;
     padding-bottom: calcPercent(66.5, 1080) + vh;
   }
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(xl) {
     background-image: url("../images/svg/footer-bg.svg");
     background-position: calcPercent(190, 1920) + vw calcPercent(115, 1080) + vh;
     background-repeat: no-repeat;
@@ -33,7 +33,7 @@
     padding-left: 40px;
     padding-right: 40px;
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(xl) {
       padding-left: calcPercent(108, 1920) + vw;
       padding-right: calcPercent(140, 1920) + vw;
     }
@@ -50,7 +50,7 @@
       &.row {
         > * {
           + * {
-            @include media-breakpoint-down(sm) {
+            @include media-breakpoint-down(lg) {
               margin-top: 39px;
             }
           }
@@ -58,7 +58,7 @@
       }
     }
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(lg) {
       text-align: center;
     }
   }
@@ -70,7 +70,7 @@
     letter-spacing: -0.39px;
     color: inherit;
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(xl) {
       font-size: fluidSize(14, 18, 768, 1920);
       letter-spacing: -0.016vw;
     }
@@ -84,16 +84,20 @@
     letter-spacing: -0.3px;
     color: $color-steel;
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(xl) {
       font-size: fluidSize(10, 14, 768, 1920);
       letter-spacing: -0.016vw;
-      text-align: left
+      text-align: left;
     }
   }
 
   [class*="form-control"] {
     + * {
-      margin-top: 22px;
+      margin-top: vw(22, 375);
+
+      @include media-breakpoint-up(xl) {
+        margin-top: vw(22, 1920);
+      }
     }
   }
 
@@ -138,12 +142,12 @@
     }
 
     &__link {
-      color: inherit
+      color: inherit;
     }
   }
 
   .akka-group-section {
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(xl) {
       margin-top: calcPercent(46, 1080) + vh;
     }
   }
@@ -155,11 +159,11 @@
     letter-spacing: -0.3px;
     text-align: center;
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(lg) {
       margin-top: 40px;
     }
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(xl) {
       font-size: fluidSize(10, 14, 768, 1920);
       letter-spacing: -0.016vw;
     }
