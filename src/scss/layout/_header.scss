@@ -204,6 +204,13 @@
       text-align: center;
       cursor: pointer;
 
+      @include media-breakpoint-up(xl) {
+        &.active {
+          color: $color-cherry;
+          border-bottom: 1px solid;
+        }
+      }
+
       + * {
         margin-left: calcPercent(32, 1920) + vw;
       }

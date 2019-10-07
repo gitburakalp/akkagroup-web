@@ -131,6 +131,13 @@ $(".header").each(function() {
     css = "scrolled",
     ww = $(window).width();
 
+  $this.find(".header-menu__item").each(function() {
+    $(this).on("click", function() {
+      $this.find(".header-menu__item").removeClass("active");
+      $(this).addClass("active");
+    });
+  });
+
   if ($this && $this.length !== "" && ww >= 768) {
     let winTop = $(window).scrollTop(),
       elemTop = $("main section:nth-child(1)").offset().top,
@@ -229,29 +236,29 @@ $("[data-trigger]:not(.circle-btn)").each(function() {
   });
 });
 
-$('.circle-btn[data-trigger]').each(function(){
-  var $constrMenu = $('.construction-menu');
+$(".circle-btn[data-trigger]").each(function() {
+  var $constrMenu = $(".construction-menu");
 
-  $(this).on('click',function(){
+  $(this).on("click", function() {
     $constrMenu.find("*").remove();
 
     $.ajax({
-    type: "get",
-    url: ConstructionUrl,
-    contentType: "application/json",
-    dataType: "json",
-    async: false,
-    success: function(response) {
-      $.each(response, function(i, e) {
-        $constrMenu.append(
-          `<li class="construction-menu-item"><a href="${e.Url}" class="construction-menu-link" >${e.Title}</a></li>`
-        );
-      });
-    },
-    failure: function(response) {
-      console.log(response);
-    }
-  });
+      type: "get",
+      url: ConstructionUrl,
+      contentType: "application/json",
+      dataType: "json",
+      async: false,
+      success: function(response) {
+        $.each(response, function(i, e) {
+          $constrMenu.append(
+            `<li class="construction-menu-item"><a href="${e.Url}" class="construction-menu-link" >${e.Title}</a></li>`
+          );
+        });
+      },
+      failure: function(response) {
+        console.log(response);
+      }
+    });
   });
 });
 

@@ -19,15 +19,15 @@ var roots = {
     outputStyle: "compressed"
   },
   prefixerOptions = {
-      grid:true,
-      browsers: ['last 2 versions']
+    grid: true,
+    browsers: ["last 2 versions"]
   },
   jsFiles = [];
 
 var functionsBrowserSync = function(done) {
     browserSync.init({
       server: {
-        baseDir: roots.srcDir
+        baseDir: "./src/"
       }
     });
 
