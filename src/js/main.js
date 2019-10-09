@@ -11,6 +11,32 @@ var TravelUrl =
 
 var switchLang = "";
 
+var headerNameList = {
+  tr: [
+    { path: "#aboutUs", name: "HAKKIMIZDA" },
+    { path: "#qualityAssurance", name: "KALİTE ANLAYIŞI" },
+    { path: "#projects", name: "PROJELERİMİZ" },
+    { path: "#contact", name: "İLETİŞİM" }
+  ],
+  en: [
+    { path: "#aboutUs", name: "ABOUT US" },
+    { path: "#qualityAssurance", name: "QUALITY ASSURANCE" },
+    { path: "#projects", name: "PROJECTS" },
+    { path: "#contact", name: "CONTACT" }
+  ]
+};
+
+$.each(headerNameList, function(i, e) {
+  var currentLang = lang != null ? lang.toLowerCase() : "tr";
+  if (i == currentLang) {
+    $.each(e, (i, j) => {
+      $(".header-menu").append(
+        `<li class="header-menu__item"><a href="${j.path}" class="header-menu__link">${j.name}</a></li>`
+      );
+    });
+  }
+});
+
 var TravelList = [
   "AKKA HOTELS Antedon",
   "AKKA HOTELS Alinda",
@@ -82,23 +108,20 @@ $(".main-slider").each(function() {
 });
 
 $(
-  '<li class="header-menu__item"><a class="header-menu__link" lang-btn></a></li>'
+  `<li class="header-menu__item"><a class="header-menu__link" lang-btn></a></li>`
 ).insertAfter(".header .header-menu__item:last-child");
 
 $("[lang-btn]").each(function() {
   switch (lang) {
-    case null:
-      lang = "EN";
-      $(this).text("EN");
+    case "TR":
+      lang = "TR";
       switchLang = "EN";
+      $(this).text(switchLang);
       break;
     case "EN":
-      $(this).text("TR");
+      lang = "EN";
       switchLang = "TR";
-      break;
-    default:
-      $(this).text("EN");
-      switchLang = "EN";
+      $(this).text(switchLang);
       break;
   }
 
