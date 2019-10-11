@@ -225,7 +225,7 @@
       color: inherit;
 
       @include media-breakpoint-up(md) {
-        font-size: fluidSize(14, 16, 768, 1920);
+        font-size: fluidSize(12, 18, 768, 1920);
         letter-spacing: -0.017vw;
       }
     }

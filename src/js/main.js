@@ -1,11 +1,17 @@
 const Header =
-  '<nav class="header-nav"> <a href="/new" class="header-logo"> <img src="/images/svg/akka-logo.svg" alt="" title="" /> </a><div class="hamburger d-md-none"><div></div><div></div><div></div></div><ul class="header-menu"></ul> </nav>';
+  '<nav class="header-nav"> <a href="/new" class="header-logo"> <img data-src="/images/svg/akka-logo.svg" alt="" title="" /> </a><div class="hamburger d-md-none"><div></div><div></div><div></div></div><ul class="header-menu"></ul> </nav>';
 
 const Footer =
-  '<div class="footer-container"><div class="row"><div class="col-12"><h2 class="footer-title">CONTACT</h2></div></div><div class="row align-items-center text-center text-xl-left"><div class="col-12 col-xl-auto"><h4 class="footer-subtitle"> AKKA Head Office</h4><p class="footer-description"> Tunalı Hilmi Cad. 114/ 36<br /> 06700 Ankara<br /><br /> T. +90 312 467 44 91<br /> F. +90 312 467 14 15</p></div><div class="col-12 col-xl-auto"><h4 class="footer-subtitle"> AKKA Head Office</h4><p class="footer-description"> Şilli Meydanı Güneş Sok. 4 / 4<br /> Ankara<br /><br />T. +90 312 467 14 14<br /> F. +90 321 467 30 60</p></div><div class="col-12 col-xl-auto"><h4 class="footer-subtitle"> AKKA İstanbul Office</h4><p class="footer-description"> FSM caddesi Özgür Sok. Hilal Plaza No :22 <br />Kat :3 Kavacık Beykoz İstanbul<br /><br />T. +90 216 425 09 15 <br /> F. +90 216 425 09 85</p></div><div class="col-12 col-xl-auto"><h4 class="footer-subtitle"> AKKA Head Office</h4><p class="footer-description"> AKKA Hotels Antedon De Luxe<br /> Beldibi İlköğretim Okulu Yanı Beldibi 1 <br /> 07985 Kemer Antalya<br /><br />T. +90 242 824 99 99<br /> F. +90 242 824 98 91</p></div><div class="order--1 input-section ml-xl-auto col-12 col-xl-auto p-0"> <input type="text" class="form-control--transparent" placeholder="Name" /> <input type="text" class="form-control--transparent" placeholder="Surname" /> <input type="text" class="form-control--transparent" placeholder="E-Mail" /><textarea rows="3" class="form-control--transparent" placeholder="Message" ></textarea><div class="col-12 text-center"> <a href="#" class="btn btn-primary">SEND</a></div></div></div><ul class="footer-menu mt-5"></ul><div class="d-flex flex-wrap align-items-center justify-content-center akka-group-section" ><div class="col-12 text-center col-xl-auto"> <img class="img-fluid" src="/images/svg/footer-logo.svg" alt="" /></div><div class="col-12 col-xl-auto"><p class="footer-copyright"> All rights reserved. 2019 © AKKA Group</p></div></div></div>';
+  '<div class="footer-container"><div class="row"><div class="col-12"><h2 class="footer-title">CONTACT</h2></div></div><div class="row align-items-center text-center text-xl-left"><div class="col-12 col-xl-auto"><h4 class="footer-subtitle"> AKKA Head Office</h4><p class="footer-description"> Tunalı Hilmi Cad. 114/ 36<br /> 06700 Ankara<br /><br /> T. +90 312 467 44 91<br /> F. +90 312 467 14 15</p></div><div class="col-12 col-xl-auto"><h4 class="footer-subtitle"> AKKA Head Office</h4><p class="footer-description"> Şilli Meydanı Güneş Sok. 4 / 4<br /> Ankara<br /><br />T. +90 312 467 14 14<br /> F. +90 321 467 30 60</p></div><div class="col-12 col-xl-auto"><h4 class="footer-subtitle"> AKKA İstanbul Office</h4><p class="footer-description"> FSM caddesi Özgür Sok. Hilal Plaza No :22 <br />Kat :3 Kavacık Beykoz İstanbul<br /><br />T. +90 216 425 09 15 <br /> F. +90 216 425 09 85</p></div><div class="col-12 col-xl-auto"><h4 class="footer-subtitle"> AKKA Head Office</h4><p class="footer-description"> AKKA Hotels Antedon De Luxe<br /> Beldibi İlköğretim Okulu Yanı Beldibi 1 <br /> 07985 Kemer Antalya<br /><br />T. +90 242 824 99 99<br /> F. +90 242 824 98 91</p></div><div class="order--1 input-section ml-xl-auto col-12 col-xl-auto p-0"> <input type="text" class="form-control--transparent" placeholder="Name" /> <input type="text" class="form-control--transparent" placeholder="Surname" /> <input type="text" class="form-control--transparent" placeholder="E-Mail" /><textarea rows="3" class="form-control--transparent" placeholder="Message" ></textarea><div class="col-12 text-center"> <a href="#" class="btn btn-primary">SEND</a></div></div></div><ul class="footer-menu mt-5"></ul><div class="d-flex flex-wrap align-items-center justify-content-center akka-group-section" ><div class="col-12 text-center col-xl-auto"> <img class="img-fluid" data-src="/images/svg/footer-logo.svg" alt="" /></div><div class="col-12 col-xl-auto"><p class="footer-copyright"> All rights reserved. 2019 © AKKA Group</p></div></div></div>';
 
 const ProjectDetailsPage =
-  '<section class="pd-section"><div class="pd-section__headings"><h3 class="project-details__title" project-details-title></h3><h4 class="project-details__subtitle" project-type> Project Type</h4><ul class="breadcrumb"><li class="breadcrumb-item"> <a href="/" class="breadcrumb-link" home-title></a></li><li class="breadcrumb-item" project-type></li></ul></div><div class="row no-gutters pd-section__details justify-content-md-center" ><div class="order-2 order-xl-1 col-auto"><div class="row mx-0 mt-5 mt-lg-0 align-items-center justify-content-between" ><div class="col-auto pr-0 pd-section__logo"> <img class="img-fluid" src="/images/svg/akka-suites-logo.svg" /></div><div class="col-auto"><h2 class="project-title text-right mb-md-105" project-title ></h2></div></div><div class="row mx-0 mt-5"><div class="col-12"><p class="description text-left" project-description></p><p class="description text-left" project-description-2></p></div></div><div class="row mx-0"><div class="col-12"><ul class="fw-section-list is-shown is-black"><li class="fw-section-list__item"></li></ul></div></div></div><div class="order-1 order-xl-2 col-auto"><div class="slider-container" data-elem="swiper"><div class="slider-wrapper"><div class="slider-slide"> <img class="img-fluid" src="https://via.placeholder.com/950x400" alt="Image" /></div><div class="slider-slide"> <img class="img-fluid" src="https://via.placeholder.com/950x400" alt="Image" /></div><div class="slider-slide"> <img class="img-fluid" src="https://via.placeholder.com/950x400" alt="Image" /></div></div><div class="slider-pagination"></div></div><div class="row mx-auto"><div class="col-12 text-right"> <a class="btn" next-project><b>Next</b> Project</a></div></div></div></div> </section> <a href="" class="btn--back"></a>';
+  '<section class="pd-section"><div class="pd-section__headings"><h3 class="project-details__title" project-details-title></h3><h4 class="project-details__subtitle" project-type> Project Type</h4><ul class="breadcrumb"><li class="breadcrumb-item"> <a href="/" class="breadcrumb-link" home-title></a></li><li class="breadcrumb-item" project-type></li></ul></div><div class="row no-gutters pd-section__details justify-content-md-center" ><div class="order-2 order-xl-1 col-auto"><div class="row mx-0 mt-5 mt-lg-0 align-items-center justify-content-between" ><div class="col-auto pr-0 pd-section__logo"> <img class="img-fluid" data-src="/images/svg/akka-suites-logo.svg" /></div><div class="col-auto"><h2 class="project-title text-right mb-md-105" project-title ></h2></div></div><div class="row mx-0 mt-5"><div class="col-12"><p class="description text-left" project-description></p><p class="description text-left" project-description-2></p></div></div><div class="row mx-0"><div class="col-12"><ul class="fw-section-list is-shown is-black"><li class="fw-section-list__item"></li></ul></div></div></div><div class="order-1 order-xl-2 col-auto"><div class="slider-container" data-elem="swiper"><div class="slider-wrapper"><div class="slider-slide"> <img class="img-fluid" data-src="https://via.placeholder.com/950x400" alt="Image" /></div><div class="slider-slide"> <img class="img-fluid" data-src="https://via.placeholder.com/950x400" alt="Image" /></div><div class="slider-slide"> <img class="img-fluid" data-src="https://via.placeholder.com/950x400" alt="Image" /></div></div><div class="slider-pagination"></div></div><div class="row mx-auto"><div class="col-12 text-right"> <a class="btn" next-project><b>Next</b> Project</a></div></div></div></div> </section> <a href="" class="btn--back"></a>';
+
+var link = document.createElement("link");
+link.setAttribute("rel", "shortcut icon");
+link.setAttribute("type", "image/png");
+link.setAttribute("href", "/favicon.png");
+document.head.appendChild(link);
 
 $("#projectDetailsPage").each(function() {
   $(this).append(ProjectDetailsPage);
@@ -59,9 +65,7 @@ $(function() {
     async: false,
     success: function(response) {
       $.each(response, function(jsonLang, e) {
-        var currentLang = lang != "" ? lang.toLowerCase() : "tr";
-
-        if (jsonLang == currentLang) {
+        if (jsonLang == lang) {
           $.each(e, function(type, elem) {
             siteJSON = e;
 
@@ -89,6 +93,19 @@ $(function() {
     failure: function(response) {
       console.log(response);
     }
+  });
+});
+
+window.addEventListener("DOMContentLoaded", function() {
+  $("[data-src]").each((idx, e) => {
+    var $this = $(e);
+    var imgSource = $this.data("src");
+    $this.attr("src", imgSource);
+  });
+
+  $("[data-bg-src]").each(function() {
+    var imgSource = $(this).data("bg-src");
+    $(this).attr("style", `background-image:url(${imgSource})`);
   });
 });
 
@@ -124,7 +141,7 @@ $("[lang-btn]").each(function() {
       break;
   }
 
-  document.title = "AKKA GROUP | " + lang;
+  document.title = "AKKA GROUP | " + lang.toUpperCase();
 
   $(this).on("click", function() {
     localStorage.setItem("lang", switchLang);
@@ -137,17 +154,24 @@ $(".main-slider").each(function() {
   console.log(siteJSON);
 
   const mainSliderItems = [
-    "Akka<br><small>Tourism</small>",
-    "Akka<br><small>Construction</small>",
-    "Akka<br><small>Shopping Center</small>"
+    `Akka<br><small>${lang == "tr" ? "Turizm" : "Tourism"}</small>`,
+    `Akka<br><small>${lang == "tr" ? "İnşaat" : "Construction"}</small>`,
+    `Akka<br><small>${lang == "tr" ? "Perakende" : "Retail"}</small>`
   ];
+
+  // $(this)
+  //   .find(".main-slider-slide")
+  //   .each(function(i) {
+  //     $(this)
+  //       .find(".main-slider-title")
+  //       .html("title" + i);
+  //   });
 
   var mainSlider = new Swiper(".main-slider", {
     slidesPerView: 1,
     spaceBetween: 30,
     touchRatio: 0,
     effect: "fade",
-    loop: true,
     containerModifierClass: "main-slider--",
     wrapperClass: "main-slider-wrapper",
     slideClass: "main-slider-slide",
@@ -166,6 +190,15 @@ $(".main-slider").each(function() {
         touchRatio: 1
       }
     }
+  });
+
+  $(".main-slider-pagination > *").each(function() {
+    $(".main-slider-pagination > *:nth-child(1)").addClass("active");
+
+    $(this).on("click", function() {
+      $(".main-slider-pagination > *").removeClass("active");
+      $(this).addClass("active");
+    });
   });
 
   $(".circle-btn").on("click", function() {

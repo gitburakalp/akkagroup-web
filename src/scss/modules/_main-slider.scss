@@ -154,7 +154,6 @@
 
     &.bg-construction {
       background-position: 50% 80%;
-      background-image: url("../../images/statics/bg-construction.jpg");
 
       .circle-btn {
         @include media-breakpoint-down(lg) {
@@ -193,6 +192,12 @@
     justify-content: space-around;
     z-index: 99;
     background-color: $color-white;
+
+    > * {
+      &.active {
+        color: $color-cherry;
+      }
+    }
 
     @include media-breakpoint-down(lg) {
       bottom: 0;
@@ -361,6 +366,17 @@
         }
       }
 
+      &--active {
+        &.bg-construction {
+          .circle-btn {
+            transform: translate(150%, 0) rotate(45deg);
+            @include media-breakpoint-up(xl) {
+              transform: translate(-150%, 0) rotate(-45deg);
+            }
+          }
+        }
+      }
+
       &.bg-construction {
         .main-slider-title {
           @include media-breakpoint-down(lg) {
@@ -390,13 +406,6 @@
           }
         }
 
-        .circle-btn {
-          transform: translate(150%, 0) rotate(45deg);
-          @include media-breakpoint-up(xl) {
-            transform: translate(-150%, 0) rotate(-45deg);
-          }
-        }
-
         .construction-menu {
           opacity: 1;
           visibility: visible;
@@ -406,11 +415,12 @@
     }
 
     .main-slider-slide {
-      animation: bg-anim 400ms ease;
+      animation: bg-anim 400ms ease-in;
       background-position: 30% 30%;
+      will-change: background-position, background-size;
 
       @include media-breakpoint-up(md) {
-        animation: bg-anim-md 400ms ease-in;
+        animation: bg-anim-md 300ms ease-out;
         background-size: 100vw;
         background-position: 100%;
       }

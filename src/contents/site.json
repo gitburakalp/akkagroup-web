@@ -14,5 +14,12 @@
     "akkaTourism": "AKKA Turizm",
     "akkaConstruction": "AKKA İnşaat",
     "akkaRetail": "AKKA Perakende"
+  },
+  "en": {
+    "projectTitle": "PROJECTS",
+    "homeTitle": "Home",
+    "akkaTourism": "AKKA Tourism",
+    "akkaConstruction": "AKKA Construction",
+    "akkaRetail": "AKKA Retail"
   }
 }

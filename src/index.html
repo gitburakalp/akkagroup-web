@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
     <link rel="stylesheet" href="/css/main.min.css" />
     <style>
       @import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese");
@@ -18,20 +17,8 @@
         <div></div>
         <div></div>
       </div>
-      <h3 class="menu-title">
-        
-      </h3>
-      <ul class="menu">
-        <li class="menu__item">
-          <a href=""> </a>
-        </li>
-        <li class="menu__item">
-          <a href=""> </a>
-        </li>
-        <li class="menu__item">
-          <a href=""> </a>
-        </li>
-      </ul>
+      <h3 class="menu-title"></h3>
+      <ul class="menu"></ul>
     </div>
 
     <header class="header"></header>
@@ -41,7 +28,7 @@
         <div class="main-slider-wrapper">
           <div
             class="main-slider-slide"
-            style="background-image: url('/images/statics/hotels-back.jpg')"
+            data-bg-src="/images/statics/hotels-back.jpg"
           >
             <h1 class="main-slider-title">AKKA Tourism</h1>
             <h2 class="main-slider-subtitle">Expect More Find More</h2>
@@ -89,7 +76,10 @@
               </li>
             </ul>
           </div>
-          <div class="main-slider-slide reverse-colors bg-construction">
+          <div
+            class="main-slider-slide reverse-colors bg-construction"
+            data-bg-src="/images/statics/hotel.jpg"
+          >
             <h1 class="main-slider-title">AKKA Construction</h1>
             <h2 class="main-slider-subtitle text-mustard">designs life</h2>
             <a
@@ -116,7 +106,7 @@
           </div>
           <div
             class="main-slider-slide"
-            style="background-image: url('http://www.proantalya.com/wp-content/uploads/2019/02/Akkapark-Sat%C4%B1l%C4%B1k-D%C3%BCkkan-Kundu-10.jpeg')"
+            data-bg-src="http://www.proantalya.com/wp-content/uploads/2019/02/Akkapark-Sat%C4%B1l%C4%B1k-D%C3%BCkkan-Kundu-10.jpeg"
           ></div>
         </div>
         <div class="main-slider-pagination"></div>
@@ -128,7 +118,7 @@
             <div class="figure__item">
               <div class="figure__item-fill"></div>
               <div class="figure__item-imgBlock">
-                <img src="/images/svg/about-bg.svg" alt="" />
+                <img data-src="/images/svg/about-bg.svg" alt="" />
               </div>
             </div>
           </figure>
@@ -215,21 +205,6 @@
                 >
                   <a href="" class="projects-menu__link">
                     Contruction
-                  </a>
-                </li>
-                <li class="projects-menu__item">
-                  <a href="" class="projects-menu__link">
-                    Travel
-                  </a>
-                </li>
-                <li class="projects-menu__item">
-                  <a href="" class="projects-menu__link">
-                    Food
-                  </a>
-                </li>
-                <li class="projects-menu__item">
-                  <a href="" class="projects-menu__link">
-                    Retail
                   </a>
                 </li>
               </ul>
