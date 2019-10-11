@@ -81,3 +81,20 @@
     }
   }
 }
+
+[project-description] {
+  ul {
+    list-style-type: disc;
+    padding-left: 0.725rem;
+
+    column-count: 2;
+
+    li {
+      line-height: 1.47;
+
+      + * {
+        margin-top: 0.25rem;
+      }
+    }
+  }
+}
