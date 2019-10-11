@@ -25,8 +25,9 @@ let switchLang = lang === "tr" ? "en" : "tr";
 
 let ConstructionList = [];
 
-let ConstructionUrl = `/contents/construction-projects-${lang}.json`;
-let TravelUrl = `/contents/travel-${lang}.json`;
+var ConstructionUrl = `/contents/construction-projects-${lang}.json`;
+var TravelUrl = `/contents/travel-${lang}.json`;
+
 let siteJSON = null;
 
 $(".header").append(Header);
@@ -324,7 +325,6 @@ $("[data-trigger]:not(.circle-btn)").each(function() {
     console.log($this.data("title"));
 
     var thisUrl = window[$this.data("title") + "Url"];
-
     console.log(thisUrl);
 
     $(".menu-title").html($(this).data("title"));
