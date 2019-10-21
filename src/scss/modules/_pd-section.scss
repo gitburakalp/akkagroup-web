@@ -7,6 +7,7 @@
       background-size: 38%;
       background-repeat: no-repeat;
       background-image: url("../../images/svg/projects-bg.svg");
+      min-height: 100vh;
 
       [class*="col"] {
         position: unset;

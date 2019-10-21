@@ -326,6 +326,9 @@ $("[data-trigger]:not(.circle-btn)").each(function() {
     var $this = $(this);
     var thisUrl = window[$this.data("title") + "Url"];
 
+    $('.projects-menu .projects-menu__item').removeClass("active");
+    $this.addClass("active");
+
     $(".menu-title").html($(this).data("title"));
 
     if (ww > 768) {
