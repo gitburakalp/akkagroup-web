@@ -20,7 +20,7 @@ $("#projectDetailsPage").each(function() {
 let urlPathName = window.location.pathname;
 
 let lang =
-  (localStorage.getItem("lang") === null)  ? "tr" : localStorage.getItem("lang");
+  (localStorage.getItem("lang") === null)  ? "tr" : localStorage.getItem("lang").toLowerCase();
 let switchLang = lang === "tr" ? "en" : "tr";
 
 let ConstructionList = [];

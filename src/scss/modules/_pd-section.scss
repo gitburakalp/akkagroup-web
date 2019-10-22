@@ -26,11 +26,11 @@
       padding-top: 15px;
 
       @include media-breakpoint-up(md) {
-        padding-top: calcPercent(200, 1080) + vh;
+        padding-top: 8vw;
         max-width: calcPercent(1640, 1920) + vw;
 
         + * {
-          margin-top: calcPercent(96, 1080) + vh;
+          margin-top: 0;
         }
       }
     }
