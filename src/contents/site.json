@@ -13,13 +13,19 @@
     "homeTitle": "Ana Sayfa",
     "akkaTourism": "AKKA Turizm",
     "akkaConstruction": "AKKA İnşaat",
-    "akkaRetail": "AKKA Perakende"
+    "akkaRetail": "AKKA Perakende",
+    "expectMoreFindMore": "Expect More Find More",
+    "designsLife": "hayat tasarlar",
+    "contactTitle": "İLETİŞİM"
   },
   "en": {
     "projectTitle": "PROJECTS",
     "homeTitle": "Home",
     "akkaTourism": "AKKA Tourism",
     "akkaConstruction": "AKKA Construction",
-    "akkaRetail": "AKKA Retail"
+    "akkaRetail": "AKKA Retail",
+    "expectMoreFindMore": "Expect More Find More",
+    "designsLife": "designs life",
+    "contactTitle": "CONTACT"
   }
 }

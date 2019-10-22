@@ -2,7 +2,7 @@ const Header =
   '<nav class="header-nav"> <a href="/new" class="header-logo"> <img data-src="/images/svg/akka-logo.svg" alt="" title="" /> </a><div class="hamburger d-md-none"><div></div><div></div><div></div></div><ul class="header-menu"></ul> </nav>';
 
 const Footer =
-  '<div class="footer-container"><div class="row"><div class="col-12"><h2 class="footer-title">CONTACT</h2></div></div><div class="row align-items-center text-center text-xl-left"><div class="col-12 col-xl-auto"><h4 class="footer-subtitle"> AKKA Head Office</h4><p class="footer-description"> Tunalı Hilmi Cad. 114/ 36<br /> 06700 Ankara<br /><br /> T. +90 312 467 44 91<br /> F. +90 312 467 14 15</p></div><div class="col-12 col-xl-auto"><h4 class="footer-subtitle"> AKKA Head Office</h4><p class="footer-description"> Şilli Meydanı Güneş Sok. 4 / 4<br /> Ankara<br /><br />T. +90 312 467 14 14<br /> F. +90 321 467 30 60</p></div><div class="col-12 col-xl-auto"><h4 class="footer-subtitle"> AKKA İstanbul Office</h4><p class="footer-description"> FSM caddesi Özgür Sok. Hilal Plaza No :22 <br />Kat :3 Kavacık Beykoz İstanbul<br /><br />T. +90 216 425 09 15 <br /> F. +90 216 425 09 85</p></div><div class="col-12 col-xl-auto"><h4 class="footer-subtitle"> AKKA Head Office</h4><p class="footer-description"> AKKA Hotels Antedon De Luxe<br /> Beldibi İlköğretim Okulu Yanı Beldibi 1 <br /> 07985 Kemer Antalya<br /><br />T. +90 242 824 99 99<br /> F. +90 242 824 98 91</p></div><div class="order--1 input-section ml-xl-auto col-12 col-xl-auto p-0"> <input type="text" class="form-control--transparent" placeholder="Name" /> <input type="text" class="form-control--transparent" placeholder="Surname" /> <input type="text" class="form-control--transparent" placeholder="E-Mail" /><textarea rows="3" class="form-control--transparent" placeholder="Message" ></textarea><div class="col-12 text-center"> <a href="#" class="btn btn-primary">SEND</a></div></div></div><ul class="footer-menu mt-5"></ul><div class="d-flex flex-wrap align-items-center justify-content-center akka-group-section" ><div class="col-12 text-center col-xl-auto"> <img class="img-fluid" data-src="/images/svg/footer-logo.svg" alt="" /></div><div class="col-12 col-xl-auto"><p class="footer-copyright"> All rights reserved. 2019 © AKKA Group</p></div></div></div>';
+  '<div class="footer-container"><div class="row"><div class="col-12"><h2 class="footer-title" contactTitle>CONTACT</h2></div></div><div class="row align-items-center text-center text-xl-left"><div class="col-12 col-xl-auto"><h4 class="footer-subtitle"> AKKA Head Office</h4><p class="footer-description"> Tunalı Hilmi Cad. 114/ 36<br /> 06700 Ankara<br /><br /> T. +90 312 467 44 91<br /> F. +90 312 467 14 15</p></div><div class="col-12 col-xl-auto"><h4 class="footer-subtitle"> AKKA Head Office</h4><p class="footer-description"> Şilli Meydanı Güneş Sok. 4 / 4<br /> Ankara<br /><br />T. +90 312 467 14 14<br /> F. +90 321 467 30 60</p></div><div class="col-12 col-xl-auto"><h4 class="footer-subtitle"> AKKA İstanbul Office</h4><p class="footer-description"> FSM caddesi Özgür Sok. Hilal Plaza No :22 <br />Kat :3 Kavacık Beykoz İstanbul<br /><br />T. +90 216 425 09 15 <br /> F. +90 216 425 09 85</p></div><div class="col-12 col-xl-auto"><h4 class="footer-subtitle"> AKKA Head Office</h4><p class="footer-description"> AKKA Hotels Antedon De Luxe<br /> Beldibi İlköğretim Okulu Yanı Beldibi 1 <br /> 07985 Kemer Antalya<br /><br />T. +90 242 824 99 99<br /> F. +90 242 824 98 91</p></div><div class="order--1 input-section ml-xl-auto col-12 col-xl-auto p-0"> <input type="text" class="form-control--transparent" placeholder="Name" /> <input type="text" class="form-control--transparent" placeholder="Surname" /> <input type="text" class="form-control--transparent" placeholder="E-Mail" /><textarea rows="3" class="form-control--transparent" placeholder="Message" ></textarea><div class="col-12 text-center"> <a href="#" class="btn btn-primary">SEND</a></div></div></div><ul class="footer-menu mt-5"></ul><div class="d-flex flex-wrap align-items-center justify-content-center akka-group-section" ><div class="col-12 text-center col-xl-auto"> <img class="img-fluid" data-src="/images/svg/footer-logo.svg" alt="" /></div><div class="col-12 col-xl-auto"><p class="footer-copyright"> All rights reserved. 2019 © AKKA Group</p></div></div></div>';
 
 const ProjectDetailsPage =
   '<section class="pd-section"><div class="pd-section__headings"><h3 class="project-details__title" project-details-title></h3><h4 class="project-details__subtitle" project-type> Project Type</h4><ul class="breadcrumb"><li class="breadcrumb-item"> <a href="/" class="breadcrumb-link" home-title></a></li><li class="breadcrumb-item" project-type></li></ul></div><div class="row no-gutters pd-section__details align-items-center justify-content-md-center" ><div class="order-2 order-xl-1 col-auto"><div class="row mx-0 mt-5 mt-lg-0 align-items-center justify-content-between" ><div class="col-auto pr-0 pd-section__logo"> <img class="img-fluid" data-src="/images/svg/akka-suites-logo.svg" /></div><div class="col-auto"><h2 class="project-title text-right mb-md-105" project-title ></h2></div></div><div class="row mx-0 mt-5"><div class="col-12"><p class="description text-left" project-description></p><p class="description text-left" project-description-2></p></div></div><div class="row mx-0"><div class="col-12"><ul class="fw-section-list is-shown is-black"><li class="fw-section-list__item"></li></ul></div></div></div><div class="order-1 order-xl-2 col-auto"><div class="slider-container" data-elem="swiper"><div class="slider-wrapper"></div><div class="slider-pagination"></div></div><div class="row mx-auto"><div class="col-12 text-right"> <a class="btn" next-project><b>Next</b> Project</a></div></div></div></div> </section> <a href="" class="btn--back"></a>';
@@ -20,7 +20,9 @@ $("#projectDetailsPage").each(function() {
 let urlPathName = window.location.pathname;
 
 let lang =
-  (localStorage.getItem("lang") === null)  ? "tr" : localStorage.getItem("lang").toLowerCase();
+  localStorage.getItem("lang") === null
+    ? "tr"
+    : localStorage.getItem("lang").toLowerCase();
 let switchLang = lang === "tr" ? "en" : "tr";
 
 let ConstructionList = [];
@@ -28,7 +30,6 @@ let ConstructionList = [];
 var ConstructionUrl = `/contents/construction-projects-${lang}.json`;
 var TravelUrl = `/contents/travel-${lang}.json`;
 var RetailUrl = `/contents/retail-projects-${lang}.json`;
-
 
 let siteJSON = null;
 
@@ -86,7 +87,12 @@ $(function() {
                 $("[project-details-title]").html(siteJSON.projectTitle);
                 $("[project-subtitle]").html("Project Type");
                 $("[home-title]").html(siteJSON.homeTitle);
-
+                $("[tourism-title]").html(siteJSON.akkaTourism);
+                $("[tourism-subtitle]").html(siteJSON.expectMoreFindMore);
+                $("[construction-title]").html(siteJSON.akkaConstruction);
+                $("[construction-subtitle]").html(siteJSON.designsLife);
+                $("[projectTitle]").html(siteJSON.projectTitle);
+                $("[contactTitle]").html(siteJSON.contactTitle);
                 break;
             }
           });
@@ -317,7 +323,7 @@ $(".projects-submenu").each(function() {
 
 $("[data-trigger]:not(.circle-btn)").each(function() {
   var $menuProjects = $(".menu--projects");
-  var $projectsSubMenu = $('.projects-submenu');
+  var $projectsSubMenu = $(".projects-submenu");
 
   var ww = $(window).width();
 
@@ -326,15 +332,14 @@ $("[data-trigger]:not(.circle-btn)").each(function() {
     var $this = $(this);
     var thisUrl = window[$this.data("title") + "Url"];
 
-    $('.projects-menu .projects-menu__item').removeClass("active");
+    $(".projects-menu .projects-menu__item").removeClass("active");
     $this.addClass("active");
 
     $(".menu-title").html($(this).data("title"));
 
     if (ww > 768) {
-      $('.projects-submenu > *').remove();
-    }
-    else {
+      $(".projects-submenu > *").remove();
+    } else {
       $menuProjects.find(".menu > *").remove();
     }
 
@@ -346,17 +351,17 @@ $("[data-trigger]:not(.circle-btn)").each(function() {
       async: false,
       success: function(response) {
         $.each(response, function(i, e) {
-
-          if(ww < 768) {
+          if (ww < 768) {
             $menuProjects
-            .find(".menu")
-            .append(
-              `<li class="menu__item"><a href="${e.Url}">${e.Title}</a></li>`
+              .find(".menu")
+              .append(
+                `<li class="menu__item"><a href="${e.Url}">${e.Title}</a></li>`
+              );
+          } else {
+            $projectsSubMenu.append(
+              `<li class="projects-submenu__item"><a href="${e.Url}" class="projects-submenu__link">${e.Title}</a></li>`
             );
-          }
-          else {
-            $projectsSubMenu.append(`<li class="projects-submenu__item"><a href="${e.Url}" class="projects-submenu__link">${e.Title}</a></li>`);
-            console.log(e.Url)
+            console.log(e.Url);
           }
         });
       },
@@ -621,11 +626,13 @@ if (lang != undefined) {
   var currentIdx = 0;
   var thisUrl = "";
 
-  $('#projectDetailsPage').each(function(){
-    var projectType = window.location.pathname.split('/')[2] == "perakende" ? "Retail" : "Construction";
+  $("#projectDetailsPage").each(function() {
+    var projectType =
+      window.location.pathname.split("/")[2] == "perakende"
+        ? "Retail"
+        : "Construction";
     thisUrl = window[projectType + "Url"];
   });
-
 
   $.ajax({
     type: "get",
@@ -643,13 +650,18 @@ if (lang != undefined) {
           $("[project-description-2]").html(e.Description2);
 
           if (e.images !== undefined) {
-              if (e.images.includes(',')) {
-            var array = e.images.split(',');
+            if (e.images.includes(",")) {
+              var array = e.images.split(",");
 
-            array.forEach(function(e,i){
-              $('.pd-section__details .slider-container .slider-wrapper').append(`<div class='slider-slide'><img src='${e}' alt='Project Image ${i + 1}' /></div>`)
-            })
-          }
+              array.forEach(function(e, i) {
+                $(
+                  ".pd-section__details .slider-container .slider-wrapper"
+                ).append(
+                  `<div class='slider-slide'><img src='${e}' alt='Project Image ${i +
+                    1}' /></div>`
+                );
+              });
+            }
           }
 
           currentIdx = Object.keys(response).indexOf(i);
@@ -665,20 +677,19 @@ if (lang != undefined) {
     }
   });
 
-    $('.pd-section__details .slider-container').length != 0 ? $('.pd-section__details .slider-container')[0].swiper.update() : "";
+  $(".pd-section__details .slider-container").length != 0
+    ? $(".pd-section__details .slider-container")[0].swiper.update()
+    : "";
 
   $(".fw-section-list").each(function() {
     var $this = $(this);
 
-    if (window.location.pathname.split('/')[2] == "inşaat") {
+    if (window.location.pathname.split("/")[2] == "inşaat") {
       $.each(ConstructionList, (i, e) => {
         $this.append(`<li class="fw-section-list__item">${e}</li>`);
       });
+    } else {
+      $this.append(`<li class="fw-section-list__item">AKKAPARK</li>`);
     }
-    else {
-        $this.append(`<li class="fw-section-list__item">AKKAPARK</li>`);
-    }
-
-    
   });
 }

@@ -269,7 +269,8 @@
 
           @include media-breakpoint-up(xl) {
             top: vw(550, 1920);
-            right: vw(260, 1920);
+            // right: vw(260, 1920);
+            left: 36vw;
           }
         }
 
@@ -282,7 +283,8 @@
 
           @include media-breakpoint-up(xl) {
             top: vw(660, 1920);
-            right: vw(411, 1920);
+            left: 36vw;
+            // right: vw(411, 1920)
           }
         }
       }
