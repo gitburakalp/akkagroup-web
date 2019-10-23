@@ -20,13 +20,11 @@
       &.travel-slide {
         .image {
           &-main {
-            $val: vw(891, 375);
-            $heightVal: vw(504, 375);
+            $val: 100%;
             max-width: $val;
-            max-height: $heightVal;
+            max-height: $val;
             min-width: $val;
-            min-height: $heightVal;
-            object-fit: cover;
+            min-height: $val;
 
             @include media-breakpoint-up(xl) {
               $val: vw(2004, 1920);
@@ -96,10 +94,15 @@
       &-sizer {
         display: block;
         padding-top: 460 / 375 * 100%;
+        transition: all 400ms;
 
         @include media-breakpoint-up(xl) {
           padding-top: 969 / 1903 * 100%;
         }
+      }
+
+      &-main {
+        object-fit: cover;
       }
 
       &-bg {
@@ -117,18 +120,12 @@
 
     &.travel-slide {
       .image-main {
-        $val: vw(725, 375);
-        $heightVal: vw(407, 375);
+        $val: 100%;
         max-width: $val;
-        max-height: $heightVal;
+        max-height: $val;
         min-width: $val;
-        min-height: $heightVal;
+        min-height: $val;
         transition: all 1s cubic-bezier(0.175, 0.885, 0.325, 1.125);
-
-        @include media-breakpoint-down(lg) {
-          left: 50%;
-          transform: translateX(-50%);
-        }
 
         @include media-breakpoint-up(xl) {
           $val: vw(2095, 1920);

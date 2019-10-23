@@ -7,10 +7,6 @@
   z-index: 20;
   transition: all 200ms ease-in;
 
-  @include media-breakpoint-up(md) {
-    height: 100vh;
-  }
-
   %main-slider-titles {
     font-family: $FontFamilySerif;
     font-weight: 500;

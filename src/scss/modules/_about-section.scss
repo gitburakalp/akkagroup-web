@@ -11,7 +11,7 @@
   @include media-breakpoint-up(xl) {
     flex-direction: row;
     align-items: center;
-    height: calcPercent(987, 1080) + vh;
+    height: calcPercent(987, 1920) + vw;
   }
 
   &__details {
@@ -31,7 +31,7 @@
 
       .figure {
         &__item {
-          max-height: calcPercent(987, 1080) + vh;
+          max-height: calcPercent(987, 1920) + vw;
           &-fill {
             padding-bottom: 987 / 1090 * 100%;
           }
