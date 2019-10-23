@@ -16,7 +16,10 @@
     "akkaRetail": "AKKA Perakende",
     "expectMoreFindMore": "Expect More Find More",
     "designsLife": "hayat tasarlar",
-    "contactTitle": "İLETİŞİM"
+    "contactTitle": "İLETİŞİM",
+    "travel": "Turizm",
+    "construction": "İnşaat",
+    "retail": "Perakende"
   },
   "en": {
     "projectTitle": "PROJECTS",
@@ -26,6 +29,9 @@
     "akkaRetail": "AKKA Retail",
     "expectMoreFindMore": "Expect More Find More",
     "designsLife": "designs life",
-    "contactTitle": "CONTACT"
+    "contactTitle": "CONTACT",
+    "travel": "Tourism",
+    "construction": "Construction",
+    "retail": "Retail"
   }
 }

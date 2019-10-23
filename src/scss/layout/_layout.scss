@@ -4,6 +4,9 @@ a {
 
 body {
   // display: none
+  * {
+    will-change: auto;
+  }
 }
 
 .container {

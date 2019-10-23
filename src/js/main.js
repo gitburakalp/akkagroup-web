@@ -91,8 +91,19 @@ $(function() {
                 $("[tourism-subtitle]").html(siteJSON.expectMoreFindMore);
                 $("[construction-title]").html(siteJSON.akkaConstruction);
                 $("[construction-subtitle]").html(siteJSON.designsLife);
+                $("[retail-title]").html(siteJSON.akkaRetail);
                 $("[projectTitle]").html(siteJSON.projectTitle);
                 $("[contactTitle]").html(siteJSON.contactTitle);
+                $(
+                  "[data-trigger='menu--projects'][data-title='Travel'] > a"
+                ).html(siteJSON.travel);
+                $(
+                  "[data-trigger='menu--projects'][data-title='Construction'] > a"
+                ).html(siteJSON.construction);
+                $(
+                  "[data-trigger='menu--projects'][data-title='Retail'] > "
+                ).html(siteJSON.retail);
+
                 break;
             }
           });
@@ -166,19 +177,10 @@ $(".main-slider").each(function() {
     `Akka<br><small>${lang == "tr" ? "Perakende" : "Retail"}</small>`
   ];
 
-  // $(this)
-  //   .find(".main-slider-slide")
-  //   .each(function(i) {
-  //     $(this)
-  //       .find(".main-slider-title")
-  //       .html("title" + i);
-  //   });
-
   var mainSlider = new Swiper(".main-slider", {
     slidesPerView: 1,
-    spaceBetween: 30,
+    spaceBetween: 0,
     touchRatio: 0,
-    effect: "fade",
     containerModifierClass: "main-slider--",
     wrapperClass: "main-slider-wrapper",
     slideClass: "main-slider-slide",
@@ -194,7 +196,8 @@ $(".main-slider").each(function() {
     },
     breakpoints: {
       1280: {
-        touchRatio: 1
+        touchRatio: 1,
+        effect: "fade",
       }
     }
   });
@@ -302,9 +305,14 @@ $(".header").each(function() {
 $(".projects-submenu").each(function() {
   var $this = $(this);
 
+  var thisUrl =
+    window[
+      $(".projects-menu > .projects-menu__item.active").data("title") + "Url"
+    ];
+
   $.ajax({
     type: "get",
-    url: ConstructionUrl,
+    url: thisUrl,
     contentType: "application/json",
     dataType: "json",
     async: false,

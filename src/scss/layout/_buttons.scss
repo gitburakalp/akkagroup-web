@@ -162,7 +162,7 @@
   padding: 1rem;
   text-transform: uppercase;
 
-  transition: all 500ms ease-in;
+  transition: all 1.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
 
   &.is-white {

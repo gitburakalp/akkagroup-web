@@ -1,0 +1,177 @@
+.main-slider {
+  &.is-active {
+    .main-slider-slide {
+      .image {
+        &-sizer {
+          @include media-breakpoint-down(lg) {
+            padding-top: calc(100vh - 52px);
+          }
+        }
+
+        &-bg {
+          $val: 110%;
+          max-width: $val;
+          max-height: $val;
+          min-width: $val;
+          min-height: $val;
+        }
+      }
+
+      &.travel-slide {
+        .image {
+          &-main {
+            $val: vw(891, 375);
+            $heightVal: vw(504, 375);
+            max-width: $val;
+            max-height: $heightVal;
+            min-width: $val;
+            min-height: $heightVal;
+            object-fit: cover;
+
+            @include media-breakpoint-up(xl) {
+              $val: vw(2004, 1920);
+              $heightVal: vw(1127, 1920);
+              max-width: $val;
+              max-height: $heightVal;
+              min-width: $val;
+              min-height: $heightVal;
+            }
+          }
+        }
+      }
+
+      &.construction-slide {
+        .image {
+          &-main {
+            $val: vw(582, 375);
+            $heightVal: vw(436, 375);
+            max-width: $val;
+            max-height: $heightVal;
+            min-width: $val;
+            min-height: $heightVal;
+
+            @include media-breakpoint-down(lg) {
+              bottom: 0;
+            }
+
+            @include media-breakpoint-up(xl) {
+              $val: vw(1192, 1920);
+              $heightVal: vw(894, 1920);
+              max-width: $val;
+              max-height: $heightVal;
+              min-width: $val;
+              min-height: $heightVal;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-slide {
+    .image {
+      position: relative;
+      overflow: hidden;
+      margin: -1px;
+
+      img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        display: block;
+        height: 0;
+        width: 0;
+        margin: 0 auto;
+
+        padding: 0 !important;
+        border: none !important;
+
+        @include media-breakpoint-down(lg) {
+          top: 0;
+          left: 0;
+        }
+      }
+
+      &-sizer {
+        display: block;
+        padding-top: 460 / 375 * 100%;
+
+        @include media-breakpoint-up(xl) {
+          padding-top: 969 / 1903 * 100%;
+        }
+      }
+
+      &-bg {
+        transition: all 1s cubic-bezier(0.175, 0.885, 0.325, 1.125);
+        left: 0;
+        top: 0;
+        $val: 100%;
+        max-width: $val;
+        max-height: $val;
+        min-width: $val;
+        min-height: $val;
+        object-fit: cover;
+      }
+    }
+
+    &.travel-slide {
+      .image-main {
+        $val: vw(725, 375);
+        $heightVal: vw(407, 375);
+        max-width: $val;
+        max-height: $heightVal;
+        min-width: $val;
+        min-height: $heightVal;
+        transition: all 1s cubic-bezier(0.175, 0.885, 0.325, 1.125);
+
+        @include media-breakpoint-down(lg) {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        @include media-breakpoint-up(xl) {
+          $val: vw(2095, 1920);
+          $heightVal: vw(1178, 1920);
+          max-width: $val;
+          max-height: $heightVal;
+          min-width: $val;
+          min-height: $heightVal;
+        }
+      }
+    }
+
+    &.construction-slide {
+      .image {
+        &-main {
+          $val: vw(395, 375);
+          $heightVal: vw(296, 375);
+          max-width: $val;
+          max-height: $heightVal;
+          min-width: $val;
+          min-height: $heightVal;
+          transition: all 1s cubic-bezier(0.175, 0.885, 0.325, 1.125);
+
+          @include media-breakpoint-down(lg) {
+            top: unset;
+            bottom: 0;
+          }
+
+          @include media-breakpoint-up(xl) {
+            $val: vw(1454, 1920);
+            $heightVal: vw(1091, 1920);
+            max-width: $val;
+            max-height: $heightVal;
+            min-width: $val;
+            min-height: $heightVal;
+            bottom: vw(-120, 1920);
+          }
+        }
+
+        &-bg {
+          transition: all 400ms ease-in;
+        }
+      }
+    }
+  }
+}

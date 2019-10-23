@@ -26,20 +26,10 @@
     <main class="main">
       <section class="main-slider">
         <div class="main-slider-wrapper">
-          <div class="main-slider-slide travel-slide">
-            <div class="image">
-              <i class="image-sizer"></i>
-              <img
-                decoding="async"
-                class="image-bg"
-                src="images/homepage/travel-bg.jpg"
-              />
-              <img
-                decoding="async"
-                class="image-main"
-                src="images/homepage/travel-img.png"
-              />
-            </div>
+          <div
+            class="main-slider-slide"
+            data-bg-src="/images/statics/hotels-back.jpg"
+          >
             <h1 class="main-slider-title" tourism-title>AKKA Tourism</h1>
             <h2 class="main-slider-subtitle" tourism-subtitle>
               Expect More Find More
@@ -88,20 +78,10 @@
               </li>
             </ul>
           </div>
-          <div class="main-slider-slide construction-slide bg-construction">
-            <div class="image">
-              <i class="image-sizer"></i>
-              <img
-                decoding="async"
-                class="image-bg"
-                src="images/homepage/construction-bg.jpg"
-              />
-              <img
-                decoding="async"
-                class="image-main"
-                src="images/homepage/construction-img.png"
-              />
-            </div>
+          <div
+            class="main-slider-slide reverse-colors bg-construction"
+            data-bg-src="/images/statics/hotel.jpg"
+          >
             <h1 class="main-slider-title" construction-title>
               AKKA Construction
             </h1>
@@ -130,19 +110,10 @@
               </li>
             </ul>
           </div>
-          <div class="main-slider-slide">
-            <div class="image">
-              <i class="image-sizer"></i>
-              <img
-                decoding="async"
-                class="image-bg"
-                src="images/homepage/construction-bg.jpg"
-              />
-            </div>
-            <h1 class="main-slider-title" retail-title>
-              AKKA Retail
-            </h1>
-          </div>
+          <div
+            class="main-slider-slide"
+            data-bg-src="http://www.proantalya.com/wp-content/uploads/2019/02/Akkapark-Sat%C4%B1l%C4%B1k-D%C3%BCkkan-Kundu-10.jpeg"
+          ></div>
         </div>
         <div class="main-slider-pagination"></div>
       </section>
@@ -153,7 +124,7 @@
             <div class="figure__item">
               <div class="figure__item-fill"></div>
               <div class="figure__item-imgBlock">
-                <img decoding="async" src="/images/svg/about-bg.svg" alt="" />
+                <img data-src="/images/svg/about-bg.svg" alt="" />
               </div>
             </div>
           </figure>
@@ -236,15 +207,6 @@
                 <li
                   class="projects-menu__item active"
                   data-trigger="menu--projects"
-                  data-title="Travel"
-                >
-                  <a href="" class="projects-menu__link">
-                    Turizm
-                  </a>
-                </li>
-                <li
-                  class="projects-menu__item"
-                  data-trigger="menu--projects"
                   data-title="Construction"
                 >
                   <a href="" class="projects-menu__link">
@@ -268,7 +230,6 @@
             <div class="row justify-content-around">
               <div class="col-auto">
                 <img
-                  decoding="async"
                   class="img-fluid"
                   data-elem="project-logo"
                   src="/images/svg/akka-suites-logo.svg"
@@ -289,7 +250,7 @@
             </div>
             <div class="row mx-0 no-gutters d-none">
               <div class="col-12">
-                <img decoding="async" data-elem="project-details-image" />
+                <img data-elem="project-details-image" />
               </div>
             </div>
           </div>
