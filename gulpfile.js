@@ -13,7 +13,7 @@ var roots = {
     srcDir: "./src/",
     jsDir: "./src/js/",
     distDir: "./dist/",
-    sourceDir: "./src/sources/"
+    sourceDir: "../sources/"
   },
   sassOptions = {
     outputStyle: "compressed"

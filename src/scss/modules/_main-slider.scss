@@ -14,11 +14,16 @@
   %main-slider-titles {
     font-family: $FontFamilySerif;
     font-weight: 500;
-    transition: all 200ms ease-in;
     position: absolute;
+  }
 
-    @include media-breakpoint-up(md) {
-      transition: all 400ms ease-in;
+  &.is-active {
+    .main-slider-title {
+      transition: all $duration ease-out;
+    }
+
+    .main-slider-subtitle {
+      transition: all $duration ease-out;
     }
   }
 
