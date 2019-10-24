@@ -6,6 +6,7 @@
   padding: 0;
   z-index: 20;
   transition: all 200ms ease-in;
+  background-color: $color-dark;
 
   %main-slider-titles {
     font-family: $FontFamilySerif;
