@@ -98,6 +98,14 @@
       }
 
       .header {
+        &.is-white {
+          color: $color-white;
+
+          .header-logo {
+            content: "/images/svg/akka-logo-white.svg";
+          }
+        }
+
         &-logo {
           position: absolute;
           right: 15px;
@@ -200,7 +208,7 @@
 
     &__item {
       position: relative;
-      color: $color-black;
+      color: inherit;
       text-align: center;
       cursor: pointer;
 

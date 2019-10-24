@@ -7,7 +7,8 @@ var gulp = require("gulp"),
   browserSync = require("browser-sync").create(),
   size = require("gulp-size"),
   plumber = require("gulp-plumber"),
-  sourcemaps = require("gulp-sourcemaps");
+  sourcemaps = require("gulp-sourcemaps"),
+  imageResize = require("gulp-image-resize");
 
 var roots = {
     srcDir: "./src/",
@@ -48,6 +49,16 @@ var functionsBrowserSync = function(done) {
       .pipe(sourcemaps.write(roots.sourceDir))
       .pipe(roots.sourceDir);
   },
+  functionResize = function() {
+    return gulp
+      .src("./src/images/**/*.jpg")
+      .pipe(
+        imageResize({
+          width: 64
+        })
+      )
+      .pipe(gulp.dest("./src/images/thumbs"));
+  },
   functionsSass = function() {
     return gulp
       .src(roots.srcDir + "scss/main.scss")
@@ -83,5 +94,6 @@ gulp.task("browser-sync", functionsBrowserSync);
 gulp.task("scripts", functionsScripts);
 gulp.task("sass", functionsSass);
 gulp.task("html", functionsHtml);
+gulp.task("imageResize", functionResize);
 gulp.task("watch", functionsWatch);
 gulp.task("default", gulp.series("browser-sync", "html", "sass", "watch"));

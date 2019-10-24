@@ -26,4 +26,12 @@
       letter-spacing: vw(-0.54, 1920);
     }
   }
+
+  &__section {
+    @include media-breakpoint-up(xl) {
+      .row:nth-child(1) {
+        min-height: 100px;
+      }
+    }
+  }
 }

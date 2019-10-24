@@ -141,9 +141,9 @@
         max-width: 100%;
 
         [data-elem="project-logo"] {
-          width: calcPercent(100, 1920) + vw;
+          width: auto;
           max-width: unset;
-          height: auto;
+          height: vw(100, 1920);
         }
 
         [data-elem="project-details-image"] {

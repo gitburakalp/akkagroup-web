@@ -1,18 +1,22 @@
 {
   "AKKAHOTELS Antedon": {
     "Title": "AKKA HOTELS Antedon",
-    "Url": "https://www.akkahotels.com/tr/antedon"
+    "Url": "https://www.akkahotels.com/tr/antedon",
+    "Logo": "/images/logos/akka-hotels-antedon.svg"
   },
   "AKKAHOTELS Alinda": {
     "Title": "AKKA HOTELS Alinda",
-    "Url": "https://www.akkahotels.com/tr/alinda"
+    "Url": "https://www.akkahotels.com/tr/alinda",
+    "Logo": "/images/logos/akka-hotels-alinda.svg"
   },
   "AKKAHOTELS Claros": {
     "Title": "AKKA HOTELS Claros",
-    "Url": "https://www.akkahotels.com/tr/claros"
+    "Url": "https://www.akkahotels.com/tr/claros",
+    "Logo": "/images/logos/akka-hotels-claros.svg"
   },
   "AKKAHOTELS Residence": {
     "Title": "AKKA HOTELS Residence",
-    "Url": "https://www.akkahotels.com/tr/residence"
+    "Url": "https://www.akkahotels.com/tr/residence",
+    "Logo": "/images/logos/akka-hotels-residence.svg"
   }
 }

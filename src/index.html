@@ -29,8 +29,11 @@
           <div class="main-slider-slide travel-slide">
             <div class="image">
               <i class="image-sizer"></i>
-              <img class="image-bg" src="/images/homepage/travel-bg.jpg" />
-              <img class="image-main" src="/images/homepage/travel-img.png" />
+              <img class="image-bg" data-src="/images/homepage/travel-bg.jpg" />
+              <img
+                class="image-main"
+                data-src="/images/homepage/travel-img.png"
+              />
             </div>
             <h1 class="main-slider-title" tourism-title>AKKA Tourism</h1>
             <h2 class="main-slider-subtitle" tourism-subtitle>
@@ -260,21 +263,12 @@
           <div class="projects-details-section">
             <div class="row align-items-center justify-content-around">
               <div class="col-auto">
-                <img
-                  class="img-fluid"
-                  data-elem="project-logo"
-                  data-src="/images/svg/akka-suites-logo.svg"
-                />
+                <img class="img-fluid" data-elem="project-logo" />
               </div>
               <div class="col-auto text-right">
-                <h2 class="project-title">5☆ AKKA ANTEDON</h2>
-              </div>
-            </div>
-            <div class="row mx-auto mt-5">
-              <div class="col-11 text-right">
-                <!-- <a href="" class="btn" data-elem="project-url"
-                  ><b>More</b> Detail</a
-                > -->
+                <h2 class="project-title" data-elem="project-title">
+                  5☆ AKKA ANTEDON
+                </h2>
               </div>
             </div>
             <div class="row mx-0 no-gutters d-none">
@@ -289,6 +283,17 @@
 
     <footer id="contact" class="footer"></footer>
 
+    <script>
+      var imgList = document.querySelectorAll("[class*=thumbs-]");
+
+      imgList.forEach(function(e) {
+        e.onload = function() {
+          var img = new Image();
+          img.src = e.dataset.src;
+          e.nextSibling.append(img);
+        };
+      });
+    </script>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/swiper.min.js"></script>
     <script src="/js/main.js"></script>
