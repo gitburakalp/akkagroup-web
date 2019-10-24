@@ -54,6 +54,8 @@
 
     &__details {
       @include media-breakpoint-up(xl) {
+        min-height: 22vw;
+
         > [class*="col"] {
           &:first-child {
             $val: calcPercent(690, 1640) * 1%;

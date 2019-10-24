@@ -29,22 +29,16 @@
           <div class="main-slider-slide travel-slide">
             <div class="image">
               <i class="image-sizer"></i>
-              <img
-                decoding="async"
-                class="image-bg"
-                src="/images/homepage/travel-bg.jpg"
-              />
-              <img
-                decoding="async"
-                class="image-main"
-                src="/images/homepage/travel-img.png"
-              />
+              <img class="image-bg" src="/images/homepage/travel-bg.jpg" />
+              <img class="image-main" src="/images/homepage/travel-img.png" />
             </div>
             <h1 class="main-slider-title" tourism-title>AKKA Tourism</h1>
             <h2 class="main-slider-subtitle" tourism-subtitle>
               Expect More Find More
             </h2>
-            <a class="circle-btn" role="button">TRAVEL<br />FOR<br />MORE</a>
+            <a class="circle-btn" role="button" tourismForMore
+              >TRAVEL<br />FOR<br />MORE</a
+            >
             <a
               href="#"
               class="project-btn"
@@ -92,14 +86,12 @@
             <div class="image">
               <i class="image-sizer"></i>
               <img
-                decoding="async"
                 class="image-bg"
-                src="/images/homepage/construction-bg.jpg"
+                data-src="/images/homepage/construction-bg.jpg"
               />
               <img
-                decoding="async"
                 class="image-main"
-                src="/images/homepage/construction-img.png"
+                data-src="/images/homepage/construction-img.png"
               />
             </div>
             <h1 class="main-slider-title" construction-title>
@@ -112,6 +104,7 @@
               class="circle-btn is-white"
               data-trigger="construction-menu"
               data-title="Construction"
+              constructionForMore
               >CONSTRUCTION<br />FOR<br />MORE</a
             >
             <a
@@ -134,9 +127,8 @@
             <div class="image">
               <i class="image-sizer"></i>
               <img
-                decoding="async"
                 class="image-bg"
-                src="/images/homepage/construction-bg.jpg"
+                data-src="/images/homepage/construction-bg.jpg"
               />
             </div>
             <h1 class="main-slider-title" retail-title>
@@ -153,7 +145,7 @@
             <div class="figure__item">
               <div class="figure__item-fill"></div>
               <div class="figure__item-imgBlock">
-                <img decoding="async" src="/images/svg/about-bg.svg" alt="" />
+                <img data-src="/images/svg/about-bg.svg" alt="" />
               </div>
             </div>
           </figure>
@@ -236,21 +228,22 @@
                 <li
                   class="projects-menu__item active"
                   data-trigger="menu--projects"
-                  data-title="Travel"
-                >
-                  <a href="" class="projects-menu__link">
-                    Turizm
-                  </a>
-                </li>
-                <li
-                  class="projects-menu__item"
-                  data-trigger="menu--projects"
                   data-title="Construction"
                 >
                   <a href="" class="projects-menu__link">
                     İnşaat
                   </a>
                 </li>
+                <li
+                  class="projects-menu__item "
+                  data-trigger="menu--projects"
+                  data-title="Travel"
+                >
+                  <a href="" class="projects-menu__link">
+                    Turizm
+                  </a>
+                </li>
+
                 <li
                   class="projects-menu__item"
                   data-trigger="menu--projects"
@@ -265,19 +258,16 @@
             </div>
           </div>
           <div class="projects-details-section">
-            <div class="row justify-content-around">
+            <div class="row align-items-center justify-content-around">
               <div class="col-auto">
                 <img
-                  decoding="async"
                   class="img-fluid"
                   data-elem="project-logo"
-                  src="/images/svg/akka-suites-logo.svg"
+                  data-src="/images/svg/akka-suites-logo.svg"
                 />
               </div>
               <div class="col-auto text-right">
-                <h2 class="project-title">
-                  AKKA<br class="d-block" />Suites Taksim
-                </h2>
+                <h2 class="project-title">5☆ AKKA ANTEDON</h2>
               </div>
             </div>
             <div class="row mx-auto mt-5">
@@ -289,7 +279,7 @@
             </div>
             <div class="row mx-0 no-gutters d-none">
               <div class="col-12">
-                <img decoding="async" data-elem="project-details-image" />
+                <img data-elem="project-details-image" />
               </div>
             </div>
           </div>

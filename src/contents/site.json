@@ -14,12 +14,21 @@
     "akkaTourism": "AKKA Turizm",
     "akkaConstruction": "AKKA İnşaat",
     "akkaRetail": "AKKA Perakende",
+    "tourismForMore": "TURIZM<br>İÇİN<br>FAZLASI",
+    "constructionForMore": "İNŞAAT<br>İÇİN<br>FAZLASI",
+    "retailForMore": "PERAKENDE<br>İÇİN<br>FAZLASI",
     "expectMoreFindMore": "Expect More Find More",
     "designsLife": "hayat tasarlar",
     "contactTitle": "İLETİŞİM",
     "travel": "Turizm",
     "construction": "İnşaat",
-    "retail": "Perakende"
+    "retail": "Perakende",
+    "nextProject": "<b>Sıradaki</b> Proje",
+    "name": "İsim",
+    "surname": "Soyisim",
+    "email": "E-Posta Adresi",
+    "message": "Mesajınız",
+    "send": "GÖNDER"
   },
   "en": {
     "projectTitle": "PROJECTS",
@@ -27,11 +36,20 @@
     "akkaTourism": "AKKA Tourism",
     "akkaConstruction": "AKKA Construction",
     "akkaRetail": "AKKA Retail",
+    "tourismForMore": "TOURISM<br>FOR<br>MORE",
+    "constructionForMore": "CONSTRUCTION<br>FOR<br>MORE",
+    "retailForMore": "RETAIL<br>FOR<br>MORE",
     "expectMoreFindMore": "Expect More Find More",
     "designsLife": "designs life",
     "contactTitle": "CONTACT",
     "travel": "Tourism",
     "construction": "Construction",
-    "retail": "Retail"
+    "retail": "Retail",
+    "nextProject": "<b>Next</b> Project",
+    "name": "Name",
+    "surname": "Surname",
+    "email": "E-Mail",
+    "message": "Message",
+    "send": "SEND"
   }
 }

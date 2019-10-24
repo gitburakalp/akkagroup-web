@@ -125,6 +125,7 @@
     @include media-breakpoint-up(xl) {
       padding-bottom: calcPercent(202, 1080) + vh;
       margin-right: calcPercent(-140, 1920) + vw;
+      min-height: 35vw;
     }
   }
 
