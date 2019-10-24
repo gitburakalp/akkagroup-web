@@ -28,7 +28,8 @@
     "surname": "Soyisim",
     "email": "E-Posta Adresi",
     "message": "Mesajınız",
-    "send": "GÖNDER"
+    "send": "GÖNDER",
+    "copyrightText": "Tüm hakları saklıdır. 2019 © AKKA Group"
   },
   "en": {
     "projectTitle": "PROJECTS",
@@ -50,6 +51,7 @@
     "surname": "Surname",
     "email": "E-Mail",
     "message": "Message",
-    "send": "SEND"
+    "send": "SEND",
+    "copyrightText": "All rights reserved. 2019 © AKKA Group"
   }
 }
