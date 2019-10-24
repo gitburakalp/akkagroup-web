@@ -328,6 +328,10 @@ $(".header").each(function() {
 
   $this.find(".header-menu__item").each(function() {
     $(this).on("click", function() {
+      if (ww < 768) {
+        $this.removeClass("is-shown");
+      }
+
       $this.find(".header-menu__item").removeClass("active");
       $(this).addClass("active");
     });
@@ -492,7 +496,6 @@ $(".circle-btn[data-trigger]").each(function() {
 });
 
 $(".hamburger").on("click", function() {
-  $("html,body").toggleClass("overflow-hidden");
   $(this)
     .closest(".header")
     .toggleClass("is-shown");
