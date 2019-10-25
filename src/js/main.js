@@ -1,3 +1,34 @@
+function getAspectRatio(h, w) {
+  var mode = null;
+  if (h > w) {
+    dividend = h;
+    divisor = w;
+    mode = "portrait";
+  }
+
+  if (w > h) {
+    dividend = w;
+    divisor = h;
+    mode = "landscape";
+  }
+
+  var gcd = -1;
+  while (gcd == -1) {
+    remainder = dividend % divisor;
+    if (remainder == 0) {
+      gcd = divisor;
+    } else {
+      dividend = divisor;
+      divisor = remainder;
+    }
+  }
+
+  var hr = w / gcd;
+  var vr = h / gcd;
+  aspectRatio = hr / vr;
+  return aspectRatio;
+}
+
 const Header =
   '<nav class="header-nav"> <a href="/new" class="header-logo"> <img data-src="/images/svg/akka-logo.svg" alt="" title="" /> </a><div class="hamburger d-md-none"><div></div><div></div><div></div></div><ul class="header-menu"></ul> </nav>';
 
@@ -165,6 +196,8 @@ $(function() {
   });
 });
 
+setAspectRatios();
+
 window.onload = function() {
   $("[data-src]").each((idx, e) => {
     var $this = $(e);
@@ -176,6 +209,24 @@ window.onload = function() {
     $(this).attr("style", `background-image:url(${imgSource})`);
   });
 };
+
+window.onresize = function() {
+  setAspectRatios();
+};
+
+function setAspectRatios() {
+  $(".image").each(function() {
+    var ww = $(window).width();
+    var wh = $(window).height();
+
+    if (ww > 1279) {
+      var arRate = getAspectRatio(wh, ww);
+      $(this)
+        .find(".image-sizer")
+        .attr("style", "--aspect-ratio:" + arRate);
+    }
+  });
+}
 
 //#endregion
 

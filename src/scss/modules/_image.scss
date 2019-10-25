@@ -97,7 +97,14 @@
         transition: all 400ms;
 
         @include media-breakpoint-up(xl) {
-          padding-top: 936 / 1920 * 100%;
+          // padding-top: 936 / 1920 * 100%;
+          padding-top: calc(100% / var(--aspect-ratio));
+          min-height: 100vh;
+        }
+
+        @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
+          padding-top: 1080 / 1920 * 100%;
+          min-height: unset;
         }
       }
 
