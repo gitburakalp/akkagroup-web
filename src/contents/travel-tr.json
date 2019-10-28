@@ -18,5 +18,10 @@
     "Title": "AKKA HOTELS Residence",
     "Url": "https://www.akkahotels.com/tr/residence",
     "Logo": "/images/logos/akka-hotels-residence.svg"
+  },
+  "AKKA Suites": {
+    "Title": "AKKA Suites Taksim",
+    "Url": "https://www.akkasuites.com/en",
+    "Logo": "/images/logos/akka-suites-taksim.svg"
   }
 }

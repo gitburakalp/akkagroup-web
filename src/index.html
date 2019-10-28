@@ -83,6 +83,14 @@
                   >AKKA HOTELS <span>Residence</span></a
                 >
               </li>
+              <li class="main-slider-menu-item">
+                <a
+                  href="https://www.akkasuites.com/en/"
+                  target="_blank"
+                  class="main-slider-menu-link"
+                  >AKKA SUITES <span>Taksim</span></a
+                >
+              </li>
             </ul>
           </div>
           <div class="main-slider-slide construction-slide bg-construction">
@@ -303,17 +311,6 @@
 
     <footer id="contact" class="footer"></footer>
 
-    <script>
-      var imgList = document.querySelectorAll("[class*=thumbs-]");
-
-      imgList.forEach(function(e) {
-        e.onload = function() {
-          var img = new Image();
-          img.src = e.dataset.src;
-          e.nextSibling.append(img);
-        };
-      });
-    </script>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/swiper.min.js"></script>
     <script src="/js/main.js"></script>

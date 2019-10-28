@@ -778,6 +778,10 @@ if (lang != undefined) {
       async: false,
       success: function(response) {
         $.each(response, function(i, e) {
+          $(".fw-section-list").append(
+            `<li class="fw-section-list__item"><a href="${e.Url}" class="fw-section-list__link">${e.Title}</a></li>`
+          );
+
           if (e.Url == urlPathName) {
             document.title = e.Title;
 
@@ -823,17 +827,5 @@ if (lang != undefined) {
     $(".pd-section__details .slider-container").length != 0
       ? $(".pd-section__details .slider-container")[0].swiper.update()
       : "";
-
-    $(".fw-section-list").each(function() {
-      var $this = $(this);
-
-      if (window.location.pathname.split("/")[2] == "insaat") {
-        $.each(ConstructionList, (i, e) => {
-          $this.append(`<li class="fw-section-list__item">${e}</li>`);
-        });
-      } else {
-        $this.append(`<li class="fw-section-list__item">AKKAPARK</li>`);
-      }
-    });
   });
 }
