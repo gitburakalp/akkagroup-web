@@ -1,3 +1,7 @@
+$(document).ready(function() {
+  $.ajaxSetup({ cache: false });
+});
+
 function getAspectRatio(h, w) {
   var mode = null;
   if (h > w) {
