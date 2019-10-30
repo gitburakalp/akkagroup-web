@@ -71,7 +71,8 @@
     "Title": "AKKA KONAKLARI",
     "Description": "Antalya Konyaaltı<br>2015 Yılında açıldı. <br><br>Akka Konakları, “Yaşamına, Standartlarına, Mutluluğuna, Geleceğine Değer Ver” sloganı ile yola çıkılarak tasarlandı.<br> Mükemmel mimari detayları ve eşsiz lokasyonu ile tüm hayatınıza yeni bir değer katmak için her tür detayı en ince ayrıntısına kadar düşünülerek tasarlandı.<br> Şehrin merkezine fonksiyonel olma amacını oturtarak hayatınıza yepyeni bir soluk getiriyor.<br> Benzersiz özellikleriyle, tasarımıyla eşsiz projelerin başında gelmektedir. Antalya, Akka Konaklarıyla bambaşka bir dünyaya kapılarını açıyor... <br>Akka Konakları, şehrin değeri her geçen gün artan bölgesi Uncalı Konaklar Mevkiisini paha biçilmez bir kolye gibi süslüyor...<br> Deprem yönetmeliğine uygun yapı Üç metre kat yüksekliği “Yüksek Tavan” Perforje demir süslemeli bahçe duvarları ve kapılar Mutfakta lüx ankastre ürünler Basketbol, voleybol sahaları Yüzme havuzu, çocuk havuzu Çocuk oyun parkı Havuz çevresine yarı açık çok amaçlı salon Modern fitness salonu Daire ve ortak mekanları kapsayan jeneratör Her blokta asansör Görüntülü interkom sistemi Tüm oda, salon ve mutfakta TV uydu altyapıları.",
     "Description2": "",
-    "Url": "/tr/insaat/akka-konaklari.html"
+    "Url": "/tr/insaat/akka-konaklari.html",
+    "images": "/images/construction/AKKA-Konaklari01.jpg,/images/construction/AKKA-Konaklari02.jpg,/images/construction/AKKA-Konaklari03.jpg"
   },
   "AKKA DORY EVLERİ": {
     "Title": "AKKA DORY EVLERİ",
@@ -84,7 +85,8 @@
     "Title": "RAYKENT",
     "Description": "Eskişehir’de adeta kendi başına bir semt niteliğinde olan Raykent’teki 872 daire, 1992 sonunda hak sahiplerine teslim edilmiştir. Raykent, şehrin en önemli ve en çok tercih edilir toplu konutlarından biri olma özelliğini taşımaktadır.",
     "Description2": "",
-    "Url": "/tr/insaat/akka-raykent.html"
+    "Url": "/tr/insaat/akka-raykent.html",
+    "images": "/images/construction/Raykent01.jpg"
   },
   "OZELKONUTLAR1": {
     "Title": "ÖZEL KONUTLAR",
@@ -139,7 +141,8 @@
     "Title": "YALI EVLERİ",
     "Description": "Eskişehir'in en göz alıcı yerleşim kuşağı olan Porsuk Çayı hattındaki Yalı Evleri'nin sakinleri 1989 yılında evlerine yerleşmişlerdir. İstasyon Mahallesi sınırındaki 28 özel konut,Eskişehir kartpostallarına fon oluşturacak niteliktedir.",
     "Description2": "",
-    "Url": "/tr/insaat/yali-evleri.html"
+    "Url": "/tr/insaat/yali-evleri.html",
+    "images": "/images/construction/Yali-Evleri01.jpg"
   },
   "ATASITESI": {
     "Title": "ATA SİTESİ",
