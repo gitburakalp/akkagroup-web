@@ -4,7 +4,7 @@
       .image {
         &-sizer {
           @include media-breakpoint-down(lg) {
-            padding-top: calc(100vh - 52px);
+            padding-top: 100vh;
           }
         }
 
@@ -93,7 +93,7 @@
 
       &-sizer {
         display: block;
-        padding-top: 460 / 375 * 100%;
+        padding-top: calc((100% / var(--aspect-ratio)) - 100px);
         transition: all 400ms;
 
         @include media-breakpoint-up(xl) {

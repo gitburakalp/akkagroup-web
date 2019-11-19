@@ -23,14 +23,8 @@
   }
 
   @include media-breakpoint-up(xl) {
-    padding-top: calcPercent(153, 1080) + vh;
-    padding-bottom: calcPercent(66.5, 1080) + vh;
-  }
-
-  @include media-breakpoint-up(xl) {
-    background-image: url("../images/svg/footer-bg.svg");
-    background-position: calcPercent(190, 1920) + vw calcPercent(115, 1080) + vh;
-    background-repeat: no-repeat;
+    padding-top: calcPercent(25, 1080) + vh;
+    padding-bottom: calcPercent(25, 1080) + vh;
   }
 
   &-container {
@@ -45,10 +39,14 @@
 
   &-title {
     font-family: $FontFamilySerif;
-    font-size: 34px;
+    font-size: 24px;
     line-height: 1.5;
     letter-spacing: -0.73px;
     color: inherit;
+
+    @include media-breakpoint-up(xl) {
+      font-size: vw(34, 1920);
+    }
 
     + * {
       &.row {
@@ -100,7 +98,7 @@
       margin-top: vw(22, 375);
 
       @include media-breakpoint-up(xl) {
-        margin-top: vw(22, 1920);
+        margin-top: vw(14, 1920);
       }
     }
   }
@@ -119,6 +117,7 @@
       position: relative;
       color: $color-white;
       padding: 0 1rem;
+      font-size: 10px;
 
       @include media-breakpoint-down(sm) {
         &:nth-child(3) {

@@ -3,10 +3,6 @@
     padding-bottom: 5vh;
 
     @include media-breakpoint-up(xl) {
-      background-position: 85% bottom;
-      background-size: 35%;
-      background-repeat: no-repeat;
-      background-image: url("../../images/svg/projects-bg.svg");
       min-height: 100vh;
 
       [class*="col"] {

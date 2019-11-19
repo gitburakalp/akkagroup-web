@@ -2,6 +2,7 @@
   font-family: $FontFamilySerif;
   font-size: 34px;
   line-height: 1.03;
+  font-weight: 700;
   letter-spacing: -0.73px;
   color: $color-cherry;
   text-align: center;
@@ -15,7 +16,7 @@
   }
 
   @include media-breakpoint-up(xl) {
-    font-size: fluidSize(20, 50, 768, 1920);
+    font-size: fluidSize(20, 35, 768, 1920);
     letter-spacing: -0.056vw;
   }
 
@@ -33,14 +34,23 @@
 .subtitle {
   font-family: $FontFamilySerif;
   font-size: 20px;
-  line-height: 1.5;
+  font-weight: 600;
+  line-height: 1.25;
   letter-spacing: 0.5px;
   color: $color-black;
   text-align: center;
 
+  + * {
+    margin-top: 33px;
+
+    @include media-breakpoint-up(xl) {
+      margin-top: calcPercent(34, 1080) + vh;
+    }
+  }
+
   @include media-breakpoint-up(xl) {
-    font-size: fluidSize(14, 30, 768, 1920);
-    letter-spacing: 0.039vw;
+    font-size: fluidSize(16, 25, 768, 1920);
+    letter-spacing: 0.0125vw;
     text-align: left;
   }
 }
@@ -50,16 +60,29 @@
   font-size: 14px;
   line-height: 1.43;
   letter-spacing: -0.016vw;
-  color: $color-steel;
+  color: $color-dark;
   text-align: center;
 
   + .description {
     margin-top: vw(16, 1920);
   }
 
+  @include media-breakpoint-up(lg) {
+    font-size: 14px;
+  }
+
   @include media-breakpoint-up(xl) {
     text-align: left;
-    font-size: fluidSize(12, 14, 768, 1920);
+    font-size: fluidSize(13, 15, 1280, 1920);
+    letter-spacing: fluidSize(0.1, 0.5, 1280, 1920);
+    font-weight: 300;
+
+    br {
+      content: "";
+      margin: 2em;
+      display: block;
+      font-size: 24%;
+    }
   }
 }
 
@@ -68,6 +91,7 @@
     font-family: $FontFamilySerif;
     font-size: 25px;
     line-height: 1.12;
+    font-weight: 700;
     letter-spacing: vw(-0.54, 375);
 
     @include media-breakpoint-up(xl) {

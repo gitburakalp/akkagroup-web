@@ -4,6 +4,12 @@ html {
 
 body {
   overflow-x: hidden;
+  transition: opacity $duration ease-out;
+  will-change: opacity;
+
+  &.is-loading {
+    opacity: 0;
+  }
 }
 
 a,
@@ -163,7 +169,7 @@ p {
     }
 
     @include media-breakpoint-up(xl) {
-      font-size: vw(20, 1920);
+      font-size: vw(16, 1920);
     }
   }
 }

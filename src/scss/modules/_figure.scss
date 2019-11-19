@@ -34,6 +34,12 @@
         margin: auto;
         box-sizing: border-box;
         object-fit: cover;
+        border: none;
+
+        &.lazy {
+          filter: blur(20px);
+          transform: scale(1.1);
+        }
       }
     }
   }
