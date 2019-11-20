@@ -48,19 +48,6 @@ link.setAttribute("type", "image/png");
 link.setAttribute("href", "/favicon.png");
 document.head.appendChild(link);
 
-if (window.location.href.includes("#")) {
-  var queryStringValue = "#" + window.location.href.split("#")[1];
-
-  $(queryStringValue).each(function() {
-    $("html,body").animate(
-      {
-        scrollTop: $(this).offset().top
-      },
-      1000
-    );
-  });
-}
-
 $("#projectDetailsPage").each(function() {
   $(this).append(ProjectDetailsPage);
 });
@@ -170,9 +157,9 @@ $(function() {
 
                   switch (windowPathName) {
                     case "insaat":
-                      $("[project-type]").html(siteJSON.construction);
+                      $("[project-type]").html(`siteJSON.construction`);
                       $(".breadcrumb-item[project-type]").html(
-                        $(".breadcrumb-item[project-type]").text() +
+                        `<a href="/#projects">${siteJSON.construction}</a>` +
                           " / " +
                           document.title
                       );
@@ -216,6 +203,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 window.onload = function() {
   $("body").removeClass("is-loading");
+
+  if (window.location.href.includes("#")) {
+    var queryStringValue = "#" + window.location.href.split("#")[1];
+
+    $(queryStringValue).each(function() {
+      console.log($(this).offset().top);
+      $("html,body").animate(
+        {
+          scrollTop: $(this).offset().top - 150
+        },
+        1000
+      );
+    });
+  }
 };
 
 window.onresize = function() {
@@ -443,12 +444,17 @@ $(".projects-submenu").each(function() {
     async: false,
     success: function(response) {
       $.each(response, function(i, e) {
+        var image = "";
+        var logo = "";
+
+        logo = e.logo != undefined ? e.logo : "";
+
+        if (e.images != undefined) {
+          image = !e.images.includes(",") ? e.images : e.images.split(",")[0];
+        }
+
         $this.append(
-          `<li class="projects-submenu__item"><a href="${
-            e.Url
-          }" class="projects-submenu__link" data-logo="${e.Logo}" data-image="${
-            e.images.split(",")[0]
-          }">${e.Title}</a></li>`
+          `<li class="projects-submenu__item"><a href="${e.Url}" class="projects-submenu__link" data-logo="${logo}" data-image="${image}">${e.Title}</a></li>`
         );
       });
     },
@@ -464,8 +470,6 @@ $(".projects-submenu").each(function() {
 
   $('[data-elem="project-title"]').html(firstItemTitle);
   $('[data-elem="project-logo"]').attr("src", firstItemLogo);
-
-  console.log(firstItemTitle, firstItemLogo);
 
   initProjectTitleHover();
 });
@@ -500,6 +504,15 @@ $("[data-trigger]:not(.circle-btn)").each(function() {
       async: false,
       success: function(response) {
         $.each(response, function(i, e) {
+          var image = "";
+          var logo = "";
+
+          logo = e.logo != undefined ? e.logo : "";
+
+          if (e.images != undefined) {
+            image = !e.images.includes(",") ? e.images : e.images.split(",")[0];
+          }
+
           if (ww < 768) {
             $menuProjects
               .find(".menu")
@@ -508,9 +521,8 @@ $("[data-trigger]:not(.circle-btn)").each(function() {
               );
           } else {
             $projectsSubMenu.append(
-              `<li class="projects-submenu__item"><a href="${e.Url}" class="projects-submenu__link" data-logo="${e.Logo}">${e.Title}</a></li>`
+              `<li class="projects-submenu__item"><a href="${e.Url}" class="projects-submenu__link" data-logo="${logo}" data-image="${image}">${e.Title}</a></li>`
             );
-            console.log(e.Url);
           }
         });
       },
@@ -706,31 +718,31 @@ function initProjectTitleHover() {
   $(".projects-submenu .projects-submenu__item").each(function() {
     var $this = $(this);
 
-    $this.hover(function() {
-      var $projectSection = $this.closest(".projects-section");
-      var $logoItem = $("[data-elem='project-logo']");
-      var $imageItem = $("[data-elem='project-details-image']");
-      var $projectTitle = $projectSection.find(".project-title");
+    $this.hover(
+      function() {
+        var $projectSection = $this.closest(".projects-section");
+        var $logoItem = $("[data-elem='project-logo']");
+        var $imageItem = $("[data-elem='project-details-image']");
+        var $projectTitle = $projectSection.find(".project-title");
 
-      var $thisLink = $this.find("a");
-      var title = $thisLink.text();
-      var logoSrc = $thisLink.data("logo");
-      var imageSrc = $thisLink.data("image");
+        var $thisLink = $this.find("a");
+        var title = $thisLink.text();
+        var logoSrc = $thisLink.data("logo");
+        var imageSrc = $thisLink.data("image");
 
-      $logoItem.fadeOut();
-      $imageItem.fadeOut();
-      $projectTitle.fadeOut();
+        $(".projects-submenu .projects-submenu__item").removeClass("active");
+        $this.addClass("active");
 
-      setTimeout(function() {
-        $projectSection.find(".project-title").text(title);
-        $logoItem.attr("src", logoSrc);
-        $imageItem.attr("src", imageSrc);
-
-        $projectTitle.fadeIn();
-        $logoItem.fadeIn(500);
-        $imageItem.fadeIn(500);
-      }, 500);
-    });
+        setTimeout(function() {
+          $projectSection.find(".project-title").text(title);
+          $logoItem.attr("src", logoSrc);
+          $imageItem.attr("src", imageSrc);
+        }, 0);
+      },
+      () => {
+        console.log("hover-out");
+      }
+    );
   });
 }
 

@@ -2,26 +2,31 @@
   "AKKAHOTELS Antedon": {
     "Title": "Akka Hotels Antedon",
     "Url": "https://www.akkahotels.com/tr/antedon",
-    "Logo": "/images/logos/akka-hotels-antedon.svg"
+    "Logo": "/images/logos/akka-hotels-antedon.svg",
+    "images": "/images/construction/akka-hotels-antedon-1.jpg"
   },
   "AKKAHOTELS Alinda": {
     "Title": "Akka Hotels Alinda",
     "Url": "https://www.akkahotels.com/tr/alinda",
-    "Logo": "/images/logos/akka-hotels-alinda.svg"
+    "Logo": "/images/logos/akka-hotels-alinda.svg",
+    "images": "/images/construction/akka-hotels-alinda-1.jpg"
   },
   "AKKAHOTELS Claros": {
     "Title": "Akka Hotels Claros",
     "Url": "https://www.akkahotels.com/tr/claros",
-    "Logo": "/images/logos/akka-hotels-claros.svg"
+    "Logo": "/images/logos/akka-hotels-claros.svg",
+    "images": "/images/construction/akka-hotels-claros-1.jpg,/images/construction/akka-hotels-claros-2.jpg,/images/construction/akka-hotels-claros-3.jpg,/images/construction/akka-hotels-claros-4.jpg"
   },
   "AKKAHOTELS Residence": {
     "Title": "Akka Hotels Residence",
     "Url": "https://www.akkahotels.com/tr/residence",
-    "Logo": "/images/logos/akka-hotels-residence.svg"
+    "Logo": "/images/logos/akka-hotels-residence.svg",
+    "images": "/images/retail/residence.jpg"
   },
   "AKKA Suites": {
     "Title": "AKKA Suites Taksim",
     "Url": "https://www.akkasuites.com/en",
-    "Logo": "/images/logos/akka-suites-taksim.svg"
+    "Logo": "/images/logos/akka-suites-taksim.svg",
+    "images": "/images/construction/Taksim-Suit-01.jpg,/images/construction/Taksim-Suit-02.jpg,/images/construction/Taksim-Suit-03.jpg"
   }
 }
